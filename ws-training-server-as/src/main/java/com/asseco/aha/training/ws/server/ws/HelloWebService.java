@@ -28,7 +28,7 @@ public class HelloWebService {
 	}
 
 	/**
-	 * Metoda nutná pro nastavení kontextu a autowired.
+	 * Spring initialization ...
 	 */
 	@PostConstruct
 	private void init() {
