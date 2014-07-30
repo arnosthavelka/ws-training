@@ -8,12 +8,11 @@
 	<version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
 
-	<name>WS-training server</name>
+	<name>WS-Training :: ${project.artifactId}</name>
 	<description>Implementation of WS server side</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<start-class>com.asseco.aha.training.ws.Application</start-class>
 		<project.source.version>1.7</project.source.version>
 		<spring.version>4.0.6.RELEASE</spring.version>
 		<slf4j.version>1.7.7</slf4j.version>

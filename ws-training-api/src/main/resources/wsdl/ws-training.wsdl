@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+      xmlns="urn:com:asseco:aha:training:ws:v1" 
+      xmlns:dto="urn:com:asseco:aha:training:types:v1" 
+      targetNamespace="urn:com:asseco:aha:training:ws:v1"
+      name="SimpleAPI">
+
+	<wsdl:documentation>Version 0.0.1</wsdl:documentation>
+
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:import namespace="urn:com:asseco:aha:training:types:v1" schemaLocation="../xsd/ws-training-types.xsd" />
+		</xsd:schema>
+	</wsdl:types>
+
+	<wsdl:message name="AddRequest">
+		<wsdl:part element="dto:AddRequest" name="request" />
+	</wsdl:message>
+	<wsdl:message name="AddResponse">
+		<wsdl:part element="dto:AddResponse" name="response" />
+	</wsdl:message>
+
+	<wsdl:portType name="WsTrainingPortType">
+		<jaxws:bindings xmlns:jaxws="http://java.sun.com/xml/ns/jaxws">
+			<jaxws:enableWrapperStyle>false</jaxws:enableWrapperStyle>
+		</jaxws:bindings>
+		<!-- other operations: remove, multiply, divide -->
+		<wsdl:operation name="add">
+			<wsdl:input message="AddRequest" name="addOI"/>
+			<wsdl:output message="AddResponse" name="addOO"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	
+	<wsdl:binding name="WsTrainingBinding" type="WsTrainingPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="add">
+			<soap:operation soapAction="add" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+		
+	<wsdl:service name="WsTraining">
+		<wsdl:port binding="WsTrainingBinding" name="WsTrainingService">
+			<soap:address location="???" />
+		</wsdl:port>
+	</wsdl:service>
+	
+</wsdl:definitions>
