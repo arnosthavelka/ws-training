@@ -16,5 +16,6 @@
 	<!-- enable AOP	 -->
 	<aop:aspectj-autoproxy/>
 
+	<bean id="commonOF" class="com.asseco.aha.training.types.v1.ObjectFactory" />
     
 </beans>

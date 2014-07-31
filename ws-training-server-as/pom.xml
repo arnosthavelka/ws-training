@@ -22,11 +22,11 @@
 
 	<dependencies>
 		<!-- WS-Training -->
-		<!-- dependency>
+		<dependency>
 			<groupId>com.asseco.aha.training.ws</groupId>
 			<artifactId>ws-server-api</artifactId>
 			<version>${ws-training-api.version}</version>
-		</dependency-->
+		</dependency>
 	
 		<!-- Spring -->
 		<dependency>

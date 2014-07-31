@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="WS-Training-AS (ACE-Academy)" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="HelloWebServiceServiceSoapBinding" type="wsdl" bindingName="{http://ws.server.ws.training.aha.asseco.com/}HelloWebServiceServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/ws-server/HelloWebService?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/ws-server/HelloWebService?WSDL"><con:part><con:url>http://localhost:8080/ws-server/HelloWebService?WSDL</con:url><con:content><![CDATA[<wsdl:definitions name="HelloWebServiceService" targetNamespace="http://ws.server.ws.training.aha.asseco.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ws.server.ws.training.aha.asseco.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://ws.server.ws.training.aha.asseco.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="sayHello" type="tns:sayHello"/>
+      <xs:element name="sayHelloResponse" type="tns:sayHelloResponse"/>
+      <xs:complexType name="sayHello">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sayHelloResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="sayHelloResponse">
+    <wsdl:part element="tns:sayHelloResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sayHello">
+    <wsdl:part element="tns:sayHello" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="HelloWebService">
+    <wsdl:operation name="sayHello">
+      <wsdl:input message="tns:sayHello" name="sayHello"></wsdl:input>
+      <wsdl:output message="tns:sayHelloResponse" name="sayHelloResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HelloWebServiceServiceSoapBinding" type="tns:HelloWebService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="sayHello">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="sayHello">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sayHelloResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HelloWebServiceService">
+    <wsdl:port binding="tns:HelloWebServiceServiceSoapBinding" name="HelloWebServicePort">
+      <soap:address location="http://localhost:8080/ws-server/HelloWebService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/ws-server-as/HelloWebService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="sayHello" bindingOperationName="sayHello" type="Request-Response" outputName="sayHelloResponse" inputName="sayHello" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="simple"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws-server-as/HelloWebService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.server.ws.training.aha.asseco.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:sayHello>
+         <arg0>Arny</arg0>
+      </ws:sayHello>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.server.ws.training.aha.asseco.com/HelloWebService/sayHello"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="CalculatorWebServiceServiceSoapBinding" type="wsdl" bindingName="{http://ws.server.ws.training.aha.asseco.com/}CalculatorWebServiceServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://phawhavelkanb2:8080/ws-server-as/CalculatorWebService?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://phawhavelkanb2:8080/ws-server-as/CalculatorWebService?WSDL"><con:part><con:url>http://phawhavelkanb2:8080/ws-server-as/CalculatorWebService?WSDL</con:url><con:content><![CDATA[<wsdl:definitions name="CalculatorWebServiceService" targetNamespace="http://ws.server.ws.training.aha.asseco.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ws.server.ws.training.aha.asseco.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns3="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="urn:com:asseco:aha:training:ws:v1">
+  <wsdl:import location="http://phawhavelkanb2:8080/ws-server-as/CalculatorWebService?wsdl=WsTrainingPortType.wsdl" namespace="urn:com:asseco:aha:training:ws:v1"></wsdl:import>
+  <wsdl:binding name="CalculatorWebServiceServiceSoapBinding" type="ns1:WsTrainingPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="add">
+      <soap:operation soapAction="add" style="document"/>
+      <wsdl:input name="add">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalculatorWebServiceService">
+    <wsdl:port binding="tns:CalculatorWebServiceServiceSoapBinding" name="CalculatorWebServicePort">
+      <soap:address location="http://phawhavelkanb2:8080/ws-server-as/CalculatorWebService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://phawhavelkanb2:8080/ws-server-as/CalculatorWebService?wsdl=WsTrainingPortType.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="WsTrainingPortType" targetNamespace="urn:com:asseco:aha:training:ws:v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="urn:com:asseco:aha:training:types:v1" xmlns:ns1="urn:com:asseco:aha:training:ws:v1">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="urn:com:asseco:aha:training:types:v1" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:com:asseco:aha:training:types:v1">
+      <xs:element name="AddRequest" type="tns:AddRequest"/>
+      <xs:element name="AddResponse" type="tns:AddResponse"/>
+      <xs:complexType name="AddRequest">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="number" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AddResponse">
+        <xs:sequence>
+          <xs:element name="result" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="addResponse">
+    <wsdl:part element="ns2:AddResponse" name="response"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="add">
+    <wsdl:part element="ns2:AddRequest" name="request"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="WsTrainingPortType">
+    <wsdl:operation name="add">
+      <wsdl:input message="ns1:add" name="add"></wsdl:input>
+      <wsdl:output message="ns1:addResponse" name="addResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://phawhavelkanb2:8080/ws-server-as/CalculatorWebService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="add" name="add" bindingOperationName="add" type="Request-Response" outputName="addResponse" inputName="add" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="simple"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://phawhavelkanb2:8080/ws-server-as/CalculatorWebService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:com:asseco:aha:training:types:v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:AddRequest>
+         <urn:number>2</urn:number>
+         <urn:number>5</urn:number>
+         <urn:number>4</urn:number>
+      </urn:AddRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="add"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
