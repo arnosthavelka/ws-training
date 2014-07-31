@@ -28,8 +28,8 @@
 		</jaxws:bindings>
 		<!-- other operations: remove, multiply, divide -->
 		<wsdl:operation name="add">
-			<wsdl:input message="AddRequest" name="addOI"/>
-			<wsdl:output message="AddResponse" name="addOO"/>
+			<wsdl:input message="AddRequest" name="AddRequest"/>
+			<wsdl:output message="AddResponse" name="AddResponse"/>
 		</wsdl:operation>
 	</wsdl:portType>
 	

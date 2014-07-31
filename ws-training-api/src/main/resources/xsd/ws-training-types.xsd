@@ -8,6 +8,10 @@
 	<xs:element name="AddRequest" type="AddRequest"/>
 	<xs:element name="AddResponse" type="AddResponse"/>
 	
+	<xs:element name="ProviderRequest" type="ProviderRequest"/>
+	<xs:element name="ExtendedProviderRequest" type="ExtendedProviderRequest"/>
+	<xs:element name="ProviderResponse" type="ProviderResponse"/>
+
 	<xs:complexType name="AddRequest">
 		<xs:sequence>
 			<xs:element name="number" type="xs:int" maxOccurs="unbounded"/>
@@ -17,6 +21,26 @@
 	<xs:complexType name="AddResponse">
 		<xs:sequence>
 			<xs:element name="result" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ProviderRequest">
+		<xs:sequence>
+			<xs:element name="value" type="xs:string" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ExtendedProviderRequest">
+		<xs:complexContent>
+			<xs:extension base="ProviderRequest">
+				<xs:attribute name="showHeaders" type="xs:boolean" default="false"/>
+			</xs:extension>
+		</xs:complexContent>	
+	</xs:complexType>
+	
+	<xs:complexType name="ProviderResponse">
+		<xs:sequence>
+			<xs:element name="value" type="xs:string" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	

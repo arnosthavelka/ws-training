@@ -1,12 +1,13 @@
 package com.asseco.aha.training.ws.server.ws;
 
 import javax.annotation.PostConstruct;
+import javax.jws.HandlerChain;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
-// @HandlerChain(file = "/handler-chain.xml")
+@HandlerChain(file = "/handler-chain.xml")
 public abstract class AbstractSoapWebService {
 
 	/**
