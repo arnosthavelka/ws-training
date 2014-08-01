@@ -222,4 +222,95 @@
          <urn:value>doo</urn:value>
       </urn:ExtendedProviderRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="echoExtended"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="echoExtended"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="LoremWebServiceServiceSoapBinding" type="wsdl" bindingName="{http://ws.server.ws.training.aha.asseco.com/}LoremWebServiceServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/ws-server-as/LoremWebService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/ws-server-as/LoremWebService?wsdl"><con:part><con:url>http://localhost:8080/ws-server-as/LoremWebService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="LoremWebServiceService" targetNamespace="http://ws.server.ws.training.aha.asseco.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ws.server.ws.training.aha.asseco.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://ws.server.ws.training.aha.asseco.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="generate" type="tns:generate"/>
+      <xs:element name="generateAsText" type="tns:generateAsText"/>
+      <xs:element name="generateAsTextResponse" type="tns:generateAsTextResponse"/>
+      <xs:element name="generateResponse" type="tns:generateResponse"/>
+      <xs:complexType name="generateAsText">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="generateAsTextResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:base64Binary"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="generate">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="generateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:base64Binary"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="generateAsTextResponse">
+    <wsdl:part element="tns:generateAsTextResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="generateAsText">
+    <wsdl:part element="tns:generateAsText" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="generateResponse">
+    <wsdl:part element="tns:generateResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="generate">
+    <wsdl:part element="tns:generate" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="LoremWebService">
+    <wsdl:operation name="generateAsText">
+      <wsdl:input message="tns:generateAsText" name="generateAsText"></wsdl:input>
+      <wsdl:output message="tns:generateAsTextResponse" name="generateAsTextResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="generate">
+      <wsdl:input message="tns:generate" name="generate"></wsdl:input>
+      <wsdl:output message="tns:generateResponse" name="generateResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LoremWebServiceServiceSoapBinding" type="tns:LoremWebService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="generateAsText">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="generateAsText">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="generateAsTextResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="generate">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="generate">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="generateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LoremWebServiceService">
+    <wsdl:port binding="tns:LoremWebServiceServiceSoapBinding" name="LoremWebServicePort">
+      <soap:address location="http://phawhavelkanb2:8080/ws-server-as/LoremWebService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://phawhavelkanb2:8080/ws-server-as/LoremWebService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="generate" bindingOperationName="generate" type="Request-Response" outputName="generateResponse" inputName="generate" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="generate"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://phawhavelkanb2:8080/ws-server-as/LoremWebService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.server.ws.training.aha.asseco.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:generate>
+         <arg0>5</arg0>
+      </ws:generate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.server.ws.training.aha.asseco.com/LoremWebService/generate"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="generateAsText" bindingOperationName="generateAsText" type="Request-Response" outputName="generateAsTextResponse" inputName="generateAsText" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="generate"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://phawhavelkanb2:8080/ws-server-as/LoremWebService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.server.ws.training.aha.asseco.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:generateAsText>
+         <arg0>3</arg0>
+      </ws:generateAsText>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.server.ws.training.aha.asseco.com/LoremWebService/generateAsText"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

@@ -27,6 +27,15 @@ public interface XmlProcessor {
 	 */
 	Document convert2dom(Source source);
 
+	/**
+	 * Apply Xpath expression on DOM element to retrieve particular elements.
+	 * 
+	 * @param xpath
+	 *            Xpatch expression (as string)
+	 * @param element
+	 *            instance of <code>Element</code> (to apply to)
+	 * @return list of found elements (instance of <code>Element</code>)
+	 */
 	List<Element> applyXpath(String xpath, Element element);
 
 }

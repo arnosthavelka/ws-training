@@ -42,6 +42,15 @@ public class XmlProcessorImpl implements XmlProcessor {
 		xf = XPathFactory.newInstance();
 	}
 
+	private Transformer createTransformer() throws TransformerConfigurationException {
+		Transformer transformer = tf.newTransformer();
+		transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
+		transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+		transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+		return transformer;
+	}
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -78,15 +87,6 @@ public class XmlProcessorImpl implements XmlProcessor {
 			LOG.error("Error in converting XML (from SOAP message) to to DOM!", ex);
 			return null;
 		}
-	}
-
-	private Transformer createTransformer() throws TransformerConfigurationException {
-		Transformer transformer = tf.newTransformer();
-		transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
-		transformer.setOutputProperty(OutputKeys.METHOD, "xml");
-		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-		transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-		return transformer;
 	}
 
 	/*
