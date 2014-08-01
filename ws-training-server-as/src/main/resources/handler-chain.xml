@@ -2,7 +2,7 @@
 <javaee:handler-chains xmlns:javaee="http://java.sun.com/xml/ns/javaee"	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<javaee:handler-chain>
 		<javaee:handler>
-			<javaee:handler-class>com.asseco.aha.training.ws.server.ws.WsLoggingHandler</javaee:handler-class>
+			<javaee:handler-class>com.asseco.aha.training.ws.server.ws.util.WsLoggingHandler</javaee:handler-class>
 		</javaee:handler>
 	</javaee:handler-chain>
 </javaee:handler-chains>

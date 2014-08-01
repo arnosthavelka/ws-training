@@ -1,21 +1,18 @@
-package com.asseco.aha.training.ws.server.ws;
+package com.asseco.aha.training.ws.server.ws.util;
 
-import java.io.StringWriter;
 import java.util.Set;
 
+import javax.annotation.PostConstruct;
 import javax.xml.namespace.QName;
 import javax.xml.soap.SOAPMessage;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Source;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.stream.StreamResult;
 import javax.xml.ws.handler.MessageContext;
 import javax.xml.ws.handler.soap.SOAPHandler;
 import javax.xml.ws.handler.soap.SOAPMessageContext;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 public class WsLoggingHandler implements SOAPHandler<SOAPMessageContext> {
 
@@ -30,7 +27,14 @@ public class WsLoggingHandler implements SOAPHandler<SOAPMessageContext> {
 	private static Logger loggerRequest = null;
 	private static Logger loggerResponse = null;
 
-	private static TransformerFactory tf = TransformerFactory.newInstance();
+	@Autowired
+	private XmlProcessor xp;
+
+	@PostConstruct
+	private void init() {
+		LOG.info("Spring initialization ...");
+		SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
+	}
 
 	@Override
 	public boolean handleMessage(SOAPMessageContext context) {
@@ -57,7 +61,7 @@ public class WsLoggingHandler implements SOAPHandler<SOAPMessageContext> {
 
 			SOAPMessage msg = messageContext.getMessage();
 
-			logger.debug(isResponse ? responseString : requestString, source2String(msg.getSOAPPart().getContent()));
+			logger.debug(isResponse ? responseString : requestString, xp.convert2String(msg.getSOAPPart().getContent()));
 
 		} catch (Exception ex) {
 			LOG.error("WS content logging error", ex);
@@ -89,31 +93,6 @@ public class WsLoggingHandler implements SOAPHandler<SOAPMessageContext> {
 			LOG.info("Creating loggers: " + LOGGER_PREFIX + ".request and " + LOGGER_PREFIX + ".response");
 			loggerRequest = LoggerFactory.getLogger(LOGGER_PREFIX + ".request");
 			loggerResponse = LoggerFactory.getLogger(LOGGER_PREFIX + ".response");
-		}
-	}
-
-	/**
-	 * Transform XML source to string (retrieve XML from the source).
-	 * 
-	 * @param source
-	 *            instance of <code>Source</code>
-	 * @return XML as string
-	 */
-	private String source2String(Source source) {
-		try {
-			StringWriter sw = new StringWriter();
-			tf = TransformerFactory.newInstance();
-			Transformer transformer = tf.newTransformer();
-			transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
-			transformer.setOutputProperty(OutputKeys.METHOD, "xml");
-			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-			transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-
-			transformer.transform(source, new StreamResult(sw));
-			return sw.toString();
-		} catch (Exception ex) {
-			LOG.error("Chyba vytvoření XML ze SOAP zprávy.", ex);
-			return "N/A";
 		}
 	}
 

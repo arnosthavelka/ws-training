@@ -61,8 +61,8 @@
 		</wsdl:operation>
 	</wsdl:binding>
 		
-	<wsdl:service name="WsTrainingProvider">
-		<wsdl:port binding="WsTrainingProviderBinding" name="WsTrainingProviderService">
+	<wsdl:service name="WsTrainingProviderService">
+		<wsdl:port binding="WsTrainingProviderBinding" name="WsTrainingProviderPort">
 			<soap:address location="???" />
 		</wsdl:port>
 	</wsdl:service>
