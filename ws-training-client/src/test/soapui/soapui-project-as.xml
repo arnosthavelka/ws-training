@@ -109,4 +109,107 @@
          <urn:number>4</urn:number>
       </urn:AddRequest>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="add"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="add"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="WsTrainingProviderBinding" type="wsdl" bindingName="{urn:com:asseco:aha:training:ws:v1}WsTrainingProviderBinding" soapVersion="1_1" anonymous="optional" definition="http://phawhavelkanb2:8080/ws-server-as/WsTrainingProviderService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://phawhavelkanb2:8080/ws-server-as/WsTrainingProviderService?wsdl"><con:part><con:url>http://phawhavelkanb2:8080/ws-server-as/WsTrainingProviderService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ProviderAPI" targetNamespace="urn:com:asseco:aha:training:ws:v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:jaxws="http://java.sun.com/xml/ns/jaxws" xmlns:dto="urn:com:asseco:aha:training:types:v1" xmlns="urn:com:asseco:aha:training:ws:v1">
+  <wsdl:documentation>Version 0.0.1</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="urn:com:asseco:aha:training:types:v1" schemaLocation="http://phawhavelkanb2:8080/ws-server-as/WsTrainingProviderService?xsd=../xsd/ws-training-types.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ProviderResponse">
+    <wsdl:part element="dto:ProviderResponse" name="response"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProviderRequestExtended">
+    <wsdl:part element="dto:ExtendedProviderRequest" name="request"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ProviderRequest">
+    <wsdl:part element="dto:ProviderRequest" name="request"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="WsTrainingProviderPortType">
+    <wsdl:operation name="echo">
+      <wsdl:input message="ProviderRequest" name="ProviderRequest"></wsdl:input>
+      <wsdl:output message="ProviderResponse" name="ProviderResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="echoExtended">
+      <wsdl:input message="ProviderRequestExtended" name="ProviderRequestExtended"></wsdl:input>
+      <wsdl:output message="ProviderResponse" name="ProviderResponseExtended"></wsdl:output>
+    </wsdl:operation>
+    <jaxws:bindings>
+      <jaxws:enableWrapperStyle>false</jaxws:enableWrapperStyle>
+    </jaxws:bindings>
+  </wsdl:portType>
+  <wsdl:binding name="WsTrainingProviderBinding" type="WsTrainingProviderPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="echo">
+      <soap:operation soapAction="echo"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="echoExtended">
+      <soap:operation soapAction="echoExtended"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsTrainingProviderService">
+    <wsdl:port binding="WsTrainingProviderBinding" name="WsTrainingProviderPort">
+      <soap:address location="http://phawhavelkanb2:8080/ws-server-as/WsTrainingProviderService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://phawhavelkanb2:8080/ws-server-as/WsTrainingProviderService?xsd=../xsd/ws-training-types.xsd</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:com:asseco:aha:training:types:v1" version="0.0.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns="urn:com:asseco:aha:training:types:v1">
+  <xs:element name="AddRequest" type="AddRequest"/>
+  <xs:element name="AddResponse" type="AddResponse"/>
+  <xs:element name="ProviderRequest" type="ProviderRequest"/>
+  <xs:element name="ExtendedProviderRequest" type="ExtendedProviderRequest"/>
+  <xs:element name="ProviderResponse" type="ProviderResponse"/>
+  <xs:complexType name="AddRequest">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="number" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AddResponse">
+    <xs:sequence>
+      <xs:element name="result" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProviderRequest">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="value" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtendedProviderRequest">
+    <xs:complexContent>
+      <xs:extension base="ProviderRequest">
+        <xs:attribute default="false" name="showHeaders" type="xs:boolean"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProviderResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="value" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://phawhavelkanb2:8080/ws-server-as/WsTrainingProviderService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="echo" name="echo" bindingOperationName="echo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="simple"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://phawhavelkanb2:8080/ws-server-as/WsTrainingProviderService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:com:asseco:aha:training:types:v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:ProviderRequest>
+         <urn:value>foo</urn:value>
+      </urn:ProviderRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="echo"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="echoExtended" name="echoExtended" bindingOperationName="echoExtended" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="simple"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://phawhavelkanb2:8080/ws-server-as/WsTrainingProviderService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:com:asseco:aha:training:types:v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:ExtendedProviderRequest showHeaders="false">
+         <!--1 or more repetitions:-->
+         <urn:value>?</urn:value>
+      </urn:ExtendedProviderRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="echoExtended"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

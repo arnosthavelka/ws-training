@@ -1,4 +1,4 @@
-package com.asseco.aha.training.ws.server.ws;
+package com.asseco.aha.training.ws.server.ws.util;
 
 import java.io.StringWriter;
 import java.util.Set;
