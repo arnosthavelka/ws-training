@@ -28,11 +28,14 @@
 							<includes>
 								<include>*.wsdl</include>
 							</includes>
-							<!-- wsdlOptions>
+							<wsdlOptions>
 								<wsdlOption>
-									<wsdl>${basedir}/src/main/resources/wsdl/ws-training.wsdl</wsdl>
+									<wsdl>${basedir}/src/main/resources/wsdl/ws-training-basic.wsdl</wsdl>
+									<extraargs>
+                                        <extraarg>-client</extraarg>
+                                    </extraargs>
 								</wsdlOption>
-							</wsdlOptions-->
+							</wsdlOptions>
 						</configuration>
 						<goals>
 							<goal>wsdl2java</goal>
