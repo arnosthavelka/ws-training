@@ -11,6 +11,8 @@
 	<xs:element name="ProviderRequest" type="ProviderRequest"/>
 	<xs:element name="ExtendedProviderRequest" type="ExtendedProviderRequest"/>
 	<xs:element name="ProviderResponse" type="ProviderResponse"/>
+	
+	<xs:element name="EndpointRequest" type="EndpointRequest"/>
 
 	<xs:complexType name="AddRequest">
 		<xs:sequence>
@@ -41,6 +43,12 @@
 	<xs:complexType name="ProviderResponse">
 		<xs:sequence>
 			<xs:element name="value" type="xs:string" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="EndpointRequest">
+		<xs:sequence>
+			<xs:any minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	

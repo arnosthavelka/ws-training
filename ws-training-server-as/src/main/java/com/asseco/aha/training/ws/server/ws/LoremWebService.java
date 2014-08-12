@@ -3,7 +3,6 @@ package com.asseco.aha.training.ws.server.ws;
 import javax.activation.DataHandler;
 import javax.jws.WebService;
 import javax.mail.util.ByteArrayDataSource;
-import javax.xml.ws.soap.Addressing;
 import javax.xml.ws.soap.MTOM;
 
 import org.slf4j.Logger;
@@ -14,7 +13,6 @@ import com.asseco.aha.training.ws.server.service.LoremService;
 
 @WebService
 @MTOM(threshold = 1024)
-@Addressing
 public class LoremWebService extends AbstractSoapWebService {
 
 	/**
