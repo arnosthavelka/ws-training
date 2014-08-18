@@ -9,11 +9,11 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>ws-server-as</artifactId>
+	<artifactId>ws-server-se</artifactId>
     <packaging>war</packaging>
 
 	<name>WS-Training :: ${project.artifactId}</name>
-	<description>Implementation of WS server side (for Wildfly)</description>
+	<description>Implementation of WS server side (for Tomcat + Spring Exporter)</description>
 
 	<properties>
 		<!-- WS-Training -->
@@ -70,7 +70,7 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
-		</dependency>
+		</dependency>	
 		
 		<!-- JavaEE -->
 		<dependency>
@@ -79,13 +79,7 @@
 			<type>pom</type>
 			<scope>provided</scope>
 		</dependency>
-
-		<!-- Others -->
-		<dependency>
-			<groupId>de.sven-jacobs</groupId>
-			<artifactId>loremipsum</artifactId>
-			<version>1.0</version>
-		</dependency>
+		
 	</dependencies>
 
 	<build>
@@ -101,28 +95,12 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.wildfly.plugins</groupId>
-				<artifactId>wildfly-maven-plugin</artifactId>
-				<version>1.0.2.Final</version>
-				<configuration>
-					<serverId>wildfly-as</serverId>
-					<hostname>localhost</hostname>
-				</configuration>
-			</plugin>
 
-			<!-- plugin>
-				<groupId>org.jboss.as.plugins</groupId>
-				<artifactId>jboss-as-maven-plugin</artifactId>
-				<version>7.5.Final</version>
-				<configuration>
-					<hostname>localhost</hostname>
-					<serverId>jboss-as</serverId>
-					<fileNames>
-						<fileName>${basedir}/target/${project.artifactId}.war</fileName>
-					</fileNames>
-				</configuration>
-			</plugin-->
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+			</plugin>		
 			
 		</plugins>
 	</build>
