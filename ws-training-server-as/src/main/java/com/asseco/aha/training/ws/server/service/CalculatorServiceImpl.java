@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CalulatorServiceImpl implements CalulatorService {
+public class CalculatorServiceImpl implements CalculatorService {
 
 	/*
 	 * (non-Javadoc)

@@ -2,7 +2,7 @@ package com.asseco.aha.training.ws.server.service;
 
 import java.util.List;
 
-public interface CalulatorService {
+public interface CalculatorService {
 
 	Integer add(List<Integer> values);
 

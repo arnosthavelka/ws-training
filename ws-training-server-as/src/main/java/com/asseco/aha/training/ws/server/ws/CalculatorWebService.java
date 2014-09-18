@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.asseco.aha.training.types.v1.AddRequest;
 import com.asseco.aha.training.types.v1.AddResponse;
 import com.asseco.aha.training.types.v1.ObjectFactory;
-import com.asseco.aha.training.ws.server.service.CalulatorService;
+import com.asseco.aha.training.ws.server.service.CalculatorService;
 import com.asseco.aha.training.ws.v1.WsTrainingPortType;
 
 @WebService(endpointInterface = "com.asseco.aha.training.ws.v1.WsTrainingPortType")
@@ -24,7 +24,7 @@ public class CalculatorWebService extends AbstractSoapWebService implements WsTr
 	private ObjectFactory of;
 
 	@Autowired
-	private CalulatorService service;
+	private CalculatorService service;
 
 	/*
 	 * (non-Javadoc)
