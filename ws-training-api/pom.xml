@@ -5,10 +5,10 @@
 	<parent>
 		<groupId>com.asseco.aha.training.ws</groupId>
 		<artifactId>ws-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.2-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>ws-server-api</artifactId>
+	<artifactId>ws-training-api</artifactId>
 	<packaging>jar</packaging>
 
 	<build>
@@ -17,7 +17,7 @@
 				<!-- http://cxf.apache.org/docs/maven-cxf-codegen-plugin-wsdl-to-java.html -->
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-codegen-plugin</artifactId>
-				<version>3.0.1</version>
+				<version>3.0.2</version>
 				<executions>
 					<execution>
 						<id>generate-sources</id>
