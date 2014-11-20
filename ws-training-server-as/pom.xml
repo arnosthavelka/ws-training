@@ -111,10 +111,10 @@
 				</configuration>
 			</plugin>
 
-			<!-- plugin>
+			<plugin>
 				<groupId>org.jboss.as.plugins</groupId>
 				<artifactId>jboss-as-maven-plugin</artifactId>
-				<version>7.5.Final</version>
+				<version>7.6.Final</version>
 				<configuration>
 					<hostname>localhost</hostname>
 					<serverId>jboss-as</serverId>
@@ -122,7 +122,7 @@
 						<fileName>${basedir}/target/${project.artifactId}.war</fileName>
 					</fileNames>
 				</configuration>
-			</plugin-->
+			</plugin>
 			
 		</plugins>
 	</build>

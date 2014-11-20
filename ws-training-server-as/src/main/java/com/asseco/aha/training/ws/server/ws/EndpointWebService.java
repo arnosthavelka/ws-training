@@ -18,30 +18,30 @@ import com.asseco.aha.training.ws.server.ws.util.XmlProcessor;
 @WebServiceProvider(wsdlLocation = "wsdl/ws-training-endpoint.wsdl", serviceName = "EndpointService", portName = "EndpointPort", targetNamespace = "urn:com:asseco:aha:training:ws:v1")
 public class EndpointWebService extends AbstractSoapWebService implements Provider<SOAPMessage> {
 
-	/**
-	 * Class logger
-	 */
-	private static final Logger LOG = LoggerFactory.getLogger(EndpointWebService.class);
+    /**
+     * Class logger
+     */
+    private static final Logger LOG = LoggerFactory.getLogger(EndpointWebService.class);
 
-	@Autowired
-	private XmlProcessor xp;
+    @Autowired
+    private XmlProcessor xp;
 
-	@Resource
-	private WebServiceContext context;
+    @Resource
+    private WebServiceContext context;
 
-	@Override
-	public SOAPMessage invoke(SOAPMessage request) {
-		LOG.debug("Provider invoke started ...");
-		try {
-			SOAPPart soapPart = request.getSOAPPart();
+    @Override
+    public SOAPMessage invoke(SOAPMessage request) {
+        LOG.debug("Provider invoke started ...");
+        try {
+            SOAPPart soapPart = request.getSOAPPart();
 
-			String xml = xp.convert2String(soapPart.getContent());
-			LOG.info("Received message:\n*****************************************\n" + xml);
-			return null;
+            String xml = xp.convert2String(soapPart.getContent());
+            LOG.info("Received message:\n*****************************************\n" + xml);
+            return null;
 
-		} catch (SOAPException e) {
-			LOG.error("Error in processing request", e);
-			throw new RuntimeException("Unexpected error ...", e);
-		}
-	}
+        } catch (SOAPException e) {
+            LOG.error("Error in processing request", e);
+            throw new RuntimeException("Unexpected error ...", e);
+        }
+    }
 }
