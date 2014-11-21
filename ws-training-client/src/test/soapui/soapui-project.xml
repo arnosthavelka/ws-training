@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="WS-Training (ACE-Academy)" resourceRoot="" soapui-version="5.0.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="200508" name="HelloWebServiceServiceSoapBinding" type="wsdl" bindingName="{http://ws.server.ws.training.aha.asseco.com/}HelloWebServiceServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/ws-server-as/HelloWebService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/ws-server-as/HelloWebService?wsdl"><con:part><con:url>http://localhost:8080/ws-server-as/HelloWebService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="HelloWebServiceService" targetNamespace="http://ws.server.ws.training.aha.asseco.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://ws.server.ws.training.aha.asseco.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://ws.server.ws.training.aha.asseco.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="sayHello" type="tns:sayHello"/>
+      <xs:element name="sayHelloResponse" type="tns:sayHelloResponse"/>
+      <xs:complexType name="sayHello">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sayHelloResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="sayHelloResponse">
+    <wsdl:part element="tns:sayHelloResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sayHello">
+    <wsdl:part element="tns:sayHello" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="HelloWebService">
+    <wsdl:operation name="sayHello">
+      <wsdl:input message="tns:sayHello" name="sayHello" wsam:Action="http://ws.server.ws.training.aha.asseco.com/HelloWebService/sayHelloRequest" wsaw:Action="http://ws.server.ws.training.aha.asseco.com/HelloWebService/sayHelloRequest"></wsdl:input>
+      <wsdl:output message="tns:sayHelloResponse" name="sayHelloResponse" wsam:Action="http://ws.server.ws.training.aha.asseco.com/HelloWebService/sayHelloResponse" wsaw:Action="http://ws.server.ws.training.aha.asseco.com/HelloWebService/sayHelloResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HelloWebServiceServiceSoapBinding" type="tns:HelloWebService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsaw:UsingAddressing wsdl:required="false"/>
+    <wsp:PolicyReference URI="#HelloWebServiceServiceSoapBinding_WSAM_Addressing_Policy"/>
+    <wsdl:operation name="sayHello">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="sayHello">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sayHelloResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HelloWebServiceService">
+    <wsdl:port binding="tns:HelloWebServiceServiceSoapBinding" name="HelloWebServicePort">
+      <soap:address location="http://localhost:8080/ws-server-as/HelloWebService"/>
+    </wsdl:port>
+  </wsdl:service>
+  <wsp:Policy wsu:Id="HelloWebServiceServiceSoapBinding_WSAM_Addressing_Policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+    <wsam:Addressing wsp:Optional="true">
+      <wsp:Policy/>
+    </wsam:Addressing>
+  </wsp:Policy>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/ws-server-as/HelloWebService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="sayHello" bindingOperationName="sayHello" type="Request-Response" outputName="sayHelloResponse" inputName="sayHello" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="simple" useWsAddressing="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws-server-as/HelloWebService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.server.ws.training.aha.asseco.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:sayHello>
+         <arg0>Arny</arg0>
+      </ws:sayHello>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.server.ws.training.aha.asseco.com/HelloWebService/sayHelloRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call name="redirect" useWsAddressing="true"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws-server-as/HelloWebService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.server.ws.training.aha.asseco.com/"
+	xmlns:wsa="http://www.w3.org/2005/08/addressing/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:sayHello>
+         <arg0>Sarah</arg0>
+      </ws:sayHello>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.server.ws.training.aha.asseco.com/HelloWebService/sayHelloRequest" addDefaultAction="true" replyTo="http://localhost:8080/ws-server-as/EndpointService" messageID="12345"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="CalcServiceSoapBinding" type="wsdl" bindingName="{http://ws.server.ws.training.aha.asseco.com/}CalcServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/ws-server-as/CalcService?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/ws-server-as/CalcService?WSDL"><con:part><con:url>http://localhost:8080/ws-server-as/CalcService?WSDL</con:url><con:content><![CDATA[<wsdl:definitions name="CalcService" targetNamespace="http://ws.server.ws.training.aha.asseco.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ws.server.ws.training.aha.asseco.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns3="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="urn:com:asseco:aha:training:ws:calc:srv:v1">
+  <wsdl:import location="http://localhost:8080/ws-server-as/CalcService?wsdl=CalcPortType.wsdl" namespace="urn:com:asseco:aha:training:ws:calc:srv:v1"></wsdl:import>
+  <wsdl:binding name="CalcServiceSoapBinding" type="ns1:CalcPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="add">
+      <soap:operation soapAction="add" style="document"/>
+      <wsdl:input name="add">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalcService">
+    <wsdl:port binding="tns:CalcServiceSoapBinding" name="CalcPort">
+      <soap:address location="http://localhost:8080/ws-server-as/CalcService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/ws-server-as/CalcService?wsdl=CalcPortType.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CalcPortType" targetNamespace="urn:com:asseco:aha:training:ws:calc:srv:v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="urn:com:asseco:aha:training:ws:types:v1" xmlns:ns1="urn:com:asseco:aha:training:ws:calc:srv:v1">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="urn:com:asseco:aha:training:ws:types:v1" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:com:asseco:aha:training:ws:types:v1">
+      <xs:element name="AddRequest" type="tns:AddRequest"/>
+      <xs:element name="AddResponse" type="tns:AddResponse"/>
+      <xs:element name="EndpointRequest" type="tns:EndpointRequest"/>
+      <xs:element name="ExtendedProviderRequest" type="tns:ExtendedProviderRequest"/>
+      <xs:element name="ProviderRequest" type="tns:ProviderRequest"/>
+      <xs:element name="ProviderResponse" type="tns:ProviderResponse"/>
+      <xs:complexType name="AddRequest">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="number" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AddResponse">
+        <xs:sequence>
+          <xs:element name="result" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ProviderResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="value" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ExtendedProviderRequest">
+        <xs:complexContent>
+          <xs:extension base="tns:ProviderRequest">
+            <xs:sequence/>
+            <xs:attribute name="showHeaders" type="xs:boolean"/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="ProviderRequest">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="value" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EndpointRequest">
+        <xs:sequence>
+          <xs:any namespace="##other" processContents="lax"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="add">
+    <wsdl:part element="ns2:AddRequest" name="request"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addResponse">
+    <wsdl:part element="ns2:AddResponse" name="response"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CalcPortType">
+    <wsdl:operation name="add">
+      <wsdl:input message="ns1:add" name="add"></wsdl:input>
+      <wsdl:output message="ns1:addResponse" name="addResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/ws-server-as/CalcService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="add" name="add" bindingOperationName="add" type="Request-Response" outputName="addResponse" inputName="add" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="simple"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws-server-as/CalcService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:com:asseco:aha:training:ws:types:v1">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:AddRequest>
+         <urn:number>2</urn:number>
+         <urn:number>5</urn:number>
+         <urn:number>4</urn:number>
+         </urn:AddRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="add"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="LoremWebServiceServiceSoapBinding" type="wsdl" bindingName="{http://ws.server.ws.training.aha.asseco.com/}LoremWebServiceServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/ws-server-as/LoremWebService?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/ws-server-as/LoremWebService?WSDL"><con:part><con:url>http://localhost:8080/ws-server-as/LoremWebService?WSDL</con:url><con:content><![CDATA[<wsdl:definitions name="LoremWebServiceService" targetNamespace="http://ws.server.ws.training.aha.asseco.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ws.server.ws.training.aha.asseco.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://ws.server.ws.training.aha.asseco.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="generate" type="tns:generate"/>
+      <xs:element name="generateAsText" type="tns:generateAsText"/>
+      <xs:element name="generateAsTextResponse" type="tns:generateAsTextResponse"/>
+      <xs:element name="generateResponse" type="tns:generateResponse"/>
+      <xs:complexType name="generateAsText">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="generateAsTextResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:base64Binary"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="generate">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="generateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:base64Binary"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="generateAsTextResponse">
+    <wsdl:part element="tns:generateAsTextResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="generateAsText">
+    <wsdl:part element="tns:generateAsText" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="generateResponse">
+    <wsdl:part element="tns:generateResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="generate">
+    <wsdl:part element="tns:generate" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="LoremWebService">
+    <wsdl:operation name="generateAsText">
+      <wsdl:input message="tns:generateAsText" name="generateAsText"></wsdl:input>
+      <wsdl:output message="tns:generateAsTextResponse" name="generateAsTextResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="generate">
+      <wsdl:input message="tns:generate" name="generate"></wsdl:input>
+      <wsdl:output message="tns:generateResponse" name="generateResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LoremWebServiceServiceSoapBinding" type="tns:LoremWebService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="generateAsText">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="generateAsText">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="generateAsTextResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="generate">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="generate">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="generateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LoremWebServiceService">
+    <wsdl:port binding="tns:LoremWebServiceServiceSoapBinding" name="LoremWebServicePort">
+      <soap:address location="http://localhost:8080/ws-server-as/LoremWebService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/ws-server-as/LoremWebService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="generate" bindingOperationName="generate" type="Request-Response" outputName="generateResponse" inputName="generate" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="simple"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws-server-as/LoremWebService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.server.ws.training.aha.asseco.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:generate>
+         <arg0>3</arg0>
+      </ws:generate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.server.ws.training.aha.asseco.com/LoremWebService/generate"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="generateAsText" bindingOperationName="generateAsText" type="Request-Response" outputName="generateAsTextResponse" inputName="generateAsText" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="simple"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws-server-as/LoremWebService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.server.ws.training.aha.asseco.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:generateAsText>
+         <arg0>5</arg0>
+      </ws:generateAsText>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.server.ws.training.aha.asseco.com/LoremWebService/generateAsText"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

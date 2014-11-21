@@ -2,16 +2,16 @@
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
       xmlns:xs="http://www.w3.org/2001/XMLSchema"
       xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-      xmlns="urn:com:asseco:aha:training:ws:v1" 
-      xmlns:dto="urn:com:asseco:aha:training:types:v1" 
-      targetNamespace="urn:com:asseco:aha:training:ws:v1"
+      xmlns="urn:com:asseco:aha:training:ws:provider:srv:v1" 
+      xmlns:dto="urn:com:asseco:aha:training:ws:types:v1" 
+      targetNamespace="urn:com:asseco:aha:training:ws:provider:srv:v1"
       name="ProviderAPI">
 
 	<wsdl:documentation>Version 0.0.1</wsdl:documentation>
 
 	<wsdl:types>
 		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-			<xsd:import namespace="urn:com:asseco:aha:training:types:v1" schemaLocation="../xsd/ws-training-types.xsd" />
+			<xsd:import namespace="urn:com:asseco:aha:training:ws:types:v1" schemaLocation="../xsd/ws-training-types.xsd" />
 		</xsd:schema>
 	</wsdl:types>
 
@@ -25,7 +25,7 @@
 		<wsdl:part element="dto:ExtendedProviderRequest" name="request" />
 	</wsdl:message>
 
-	<wsdl:portType name="WsTrainingProviderPortType">
+	<wsdl:portType name="ProviderPortType">
 		<jaxws:bindings xmlns:jaxws="http://java.sun.com/xml/ns/jaxws">
 			<jaxws:enableWrapperStyle>false</jaxws:enableWrapperStyle>
 		</jaxws:bindings>
@@ -39,7 +39,7 @@
 		</wsdl:operation>
 	</wsdl:portType>
 	
-	<wsdl:binding name="WsTrainingProviderBinding" type="WsTrainingProviderPortType">
+	<wsdl:binding name="ProviderBinding" type="ProviderPortType">
 		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
 		<wsdl:operation name="echo">
 			<soap:operation soapAction="echo" />
@@ -61,8 +61,8 @@
 		</wsdl:operation>
 	</wsdl:binding>
 		
-	<wsdl:service name="WsTrainingProviderService">
-		<wsdl:port binding="WsTrainingProviderBinding" name="WsTrainingProviderPort">
+	<wsdl:service name="ProviderService">
+		<wsdl:port binding="ProviderBinding" name="ProviderPort">
 			<soap:address location="???" />
 		</wsdl:port>
 	</wsdl:service>

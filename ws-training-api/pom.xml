@@ -30,7 +30,7 @@
 							</includes>
 							<wsdlOptions>
 								<wsdlOption>
-									<wsdl>${basedir}/src/main/resources/wsdl/ws-training-basic.wsdl</wsdl>
+									<wsdl>${basedir}/src/main/resources/wsdl/ws-training-calc.wsdl</wsdl>
 									<extraargs>
                                         <extraarg>-client</extraarg>
                                     </extraargs>

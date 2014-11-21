@@ -2,10 +2,10 @@
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
       xmlns:xs="http://www.w3.org/2001/XMLSchema"
       xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-      xmlns="urn:com:asseco:aha:training:ws:endpoint:srv:v1" 
+      xmlns="urn:com:asseco:aha:training:ws:calc:srv:v1" 
       xmlns:dto="urn:com:asseco:aha:training:ws:types:v1" 
-      targetNamespace="urn:com:asseco:aha:training:ws:endpoint:srv:v1"
-      name="EndpointAPI">
+      targetNamespace="urn:com:asseco:aha:training:ws:calc:srv:v1"
+      name="CalcAPI">
 
 	<wsdl:documentation>Version 0.0.1</wsdl:documentation>
 
@@ -15,31 +15,39 @@
 		</xsd:schema>
 	</wsdl:types>
 
-	<wsdl:message name="EndpointRequest">
-		<wsdl:part element="dto:EndpointRequest" name="request" />
+	<wsdl:message name="AddRequest">
+		<wsdl:part element="dto:AddRequest" name="request" />
+	</wsdl:message>
+	<wsdl:message name="AddResponse">
+		<wsdl:part element="dto:AddResponse" name="response" />
 	</wsdl:message>
 
-	<wsdl:portType name="EndpointPortType">
+	<wsdl:portType name="CalcPortType">
 		<jaxws:bindings xmlns:jaxws="http://java.sun.com/xml/ns/jaxws">
 			<jaxws:enableWrapperStyle>false</jaxws:enableWrapperStyle>
 		</jaxws:bindings>
-		<wsdl:operation name="receive">
-			<wsdl:input message="EndpointRequest" name="EndpointRequest"/>
+		<!-- other operations: remove, multiply, divide -->
+		<wsdl:operation name="add">
+			<wsdl:input message="AddRequest" name="AddRequest"/>
+			<wsdl:output message="AddResponse" name="AddResponse"/>
 		</wsdl:operation>
 	</wsdl:portType>
 	
-	<wsdl:binding name="EndpointBinding" type="EndpointPortType">
+	<wsdl:binding name="CalcBinding" type="CalcPortType">
 		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
-		<wsdl:operation name="receive">
-			<soap:operation soapAction="receive" />
+		<wsdl:operation name="add">
+			<soap:operation soapAction="add" />
 			<wsdl:input>
 				<soap:body use="literal" />
 			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
 		</wsdl:operation>
 	</wsdl:binding>
 		
-	<wsdl:service name="EndpointService">
-		<wsdl:port binding="EndpointBinding" name="EndpointPort">
+	<wsdl:service name="CalcService">
+		<wsdl:port binding="CalcBinding" name="CalcPort">
 			<soap:address location="???" />
 		</wsdl:port>
 	</wsdl:service>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<!-- init spring context -->
+	<context:annotation-config/>
+    <context:spring-configured/>
+    <context:component-scan base-package="com.asseco.aha.training.ws.server"/>
+
+	<!-- enable AOP	 -->
+	<aop:aspectj-autoproxy/>
+
+	<bean id="commonOF" class="com.asseco.aha.training.ws.types.v1.ObjectFactory" />
+	
+	<!-- define CXF endpoints (WS)	-->
+	<jaxws:endpoint id="calcWS" implementor="com.asseco.aha.training.ws.server.ws.CalculatorWebService" address="/CalculatorWebService"/>
+	
+	<!-- jaxws:endpoint implementor="#calcWS" implementorClass="com.asseco.aha.training.ws.v1.WsTrainingPortType" 
+				wsdlLocation="classpath:wsdl/ws-training-basic.wsdl" address="/CalculatorWebService" 
+				xmlns:a="urn:com:asseco:aha:training:ws:v1" serviceName="a:WsTrainingService" endpointName="a:WsTrainingPort">
+    <jaxws:properties>       
+      <entry key="source-preferred-format" value="dom"/>
+      <entry key="mtom-enabled" value="true" />
+      <entry key="schema-validation-enabled" value="false"/>
+      <entry key="faultStackTraceEnabled" value="true"/>
+      <entry key="exceptionMessageCauseEnabled" value="true"/>
+    </jaxws:properties>                          
+  </jaxws:endpoint-->
+    
+</beans>
