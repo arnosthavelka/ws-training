@@ -1,6 +1,7 @@
 package com.asseco.aha.training.ws.server.ws;
 
 import javax.activation.DataHandler;
+import javax.jws.WebMethod;
 import javax.mail.util.ByteArrayDataSource;
 
 import org.slf4j.Logger;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 import com.asseco.aha.training.ws.server.service.LoremService;
 
-@Component
+@Component("loremBean")
 public class LoremWebService {
 
     /**
@@ -21,6 +22,7 @@ public class LoremWebService {
     @Autowired
     private LoremService service;
 
+    @WebMethod
     public byte[] generate(int paraCount) {
         LOG.info("Starting lorem ipsum WS method ...");
         String text = service.generate(paraCount);

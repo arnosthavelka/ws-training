@@ -4,10 +4,13 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:cxf="http://cxf.apache.org/core"
 	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd
 		http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
 	<!-- init spring context -->
@@ -19,20 +22,62 @@
 	<aop:aspectj-autoproxy/>
 
 	<bean id="commonOF" class="com.asseco.aha.training.ws.types.v1.ObjectFactory" />
-	
+
+	<!-- define CXF interceptors (for request/response logging) -->
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<!-- import resource="classpath:META-INF/cxf/cxf-servlet.xml" /--> 
+  
+	<bean id="logInbound" class="org.apache.cxf.interceptor.LoggingInInterceptor" />
+	<bean id="logOutbound" class="org.apache.cxf.interceptor.LoggingOutInterceptor" />
+
+	<cxf:bus>
+		<cxf:inInterceptors>
+			<ref bean="logInbound" />
+		</cxf:inInterceptors>
+		<cxf:outInterceptors>
+			<ref bean="logOutbound" />
+		</cxf:outInterceptors>
+		<cxf:inFaultInterceptors>
+			<ref bean="logInbound" />
+		</cxf:inFaultInterceptors>
+		<cxf:outFaultInterceptors>
+			<ref bean="logOutbound" />
+		</cxf:outFaultInterceptors>
+	</cxf:bus> 
+  	
 	<!-- define CXF endpoints (WS)	-->
 	<jaxws:endpoint id="calcWS" implementor="com.asseco.aha.training.ws.server.ws.CalculatorWebService" address="/CalculatorWebService"/>
 	
-	<!-- jaxws:endpoint implementor="#calcWS" implementorClass="com.asseco.aha.training.ws.v1.WsTrainingPortType" 
-				wsdlLocation="classpath:wsdl/ws-training-basic.wsdl" address="/CalculatorWebService" 
-				xmlns:a="urn:com:asseco:aha:training:ws:v1" serviceName="a:WsTrainingService" endpointName="a:WsTrainingPort">
-    <jaxws:properties>       
-      <entry key="source-preferred-format" value="dom"/>
-      <entry key="mtom-enabled" value="true" />
-      <entry key="schema-validation-enabled" value="false"/>
-      <entry key="faultStackTraceEnabled" value="true"/>
-      <entry key="exceptionMessageCauseEnabled" value="true"/>
-    </jaxws:properties>                          
-  </jaxws:endpoint-->
+	<jaxws:endpoint id="loremWS" implementor="#loremBean" address="/LoremWebService">
+	    <jaxws:properties>       
+	      <entry key="mtom-enabled" value="true" />
+	      <!-- entry key="source-preferred-format" value="dom"/>
+	      <entry key="schema-validation-enabled" value="false"/>
+	      <entry key="faultStackTraceEnabled" value="true"/>
+	      <entry key="exceptionMessageCauseEnabled" value="true"/-->
+	    </jaxws:properties>                          
+	</jaxws:endpoint>
+	
+	<jaxws:endpoint id="providerWS" implementor="#providerBean" address="/ProviderWebService"
+		wsdlLocation="classpath:wsdl/ws-training-provider.wsdl"
+		xmlns:a="urn:com:asseco:aha:training:ws:provider:srv:v1" serviceName="a:ProviderService" endpointName="a:ProviderPort">
+		<jaxws:properties>
+			<entry key="source-preferred-format" value="dom" />
+			<entry key="schema-validation-enabled" value="false" />
+			<entry key="faultStackTraceEnabled" value="true" />
+			<entry key="exceptionMessageCauseEnabled" value="true" />
+		</jaxws:properties>
+	</jaxws:endpoint>	
+
+    <!--
+    xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
     
+	<jaxrs:server id="restServer" address="/rest/">
+		<jaxrs:serviceBeans>
+			<ref bean="welcomeRest" />
+		</jaxrs:serviceBeans>
+	</jaxrs:server>
+  	
+  	-->    
 </beans>
