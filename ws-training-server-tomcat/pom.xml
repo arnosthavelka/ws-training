@@ -6,25 +6,25 @@
 	<parent>
 		<groupId>com.asseco.aha.training.ws</groupId>
 		<artifactId>ws-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.2-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>ws-server-se</artifactId>
+	<artifactId>ws-server-tomcat</artifactId>
     <packaging>war</packaging>
 
 	<name>WS-Training :: ${project.artifactId}</name>
-	<description>Implementation of WS server side (for Tomcat + Spring Exporter)</description>
+	<description>Implementation of WS server side (for Tomcat)</description>
 
 	<properties>
 		<!-- WS-Training -->
-		<ws-training-api.version>0.0.1-SNAPSHOT</ws-training-api.version>
+		<ws-training-api.version>0.0.2-SNAPSHOT</ws-training-api.version>
 	</properties>
 
 	<dependencies>
 		<!-- WS-Training -->
 		<dependency>
 			<groupId>com.asseco.aha.training.ws</groupId>
-			<artifactId>ws-server-api</artifactId>
+			<artifactId>ws-training-api</artifactId>
 			<version>${ws-training-api.version}</version>
 		</dependency>
 	
