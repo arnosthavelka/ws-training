@@ -7,17 +7,18 @@ import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 import com.asseco.aha.training.ws.server.service.HelloService;
 
+// http://localhost:8080/hello?name=Gabriel
 @RestController
 public class HelloRestService {
 
-	@Autowired
-	private HelloService service;
+    @Autowired
+    private HelloService service;
 
-	@RequestMapping("/hello")
-	public String sayHello(String name) {
-		SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
+    @RequestMapping("/hello")
+    public String sayHello(String name) {
+        SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
 
-		return service.sayHello(name);
-	}
+        return service.sayHello(name);
+    }
 
 }
