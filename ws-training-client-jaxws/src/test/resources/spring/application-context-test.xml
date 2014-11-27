@@ -16,13 +16,13 @@
 	<!-- enable AOP	 -->
 	<aop:aspectj-autoproxy/>
 
-	<bean id="objectFactory" class="com.asseco.aha.training.types.v1.ObjectFactory" />
+	<bean id="objectFactory" class="com.asseco.aha.training.ws.types.v1.ObjectFactory" />
     
     <bean id="CalculatorWS" class="org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean"
-		p:serviceInterface="com.asseco.aha.training.ws.v1.WsTrainingPortType"
+		p:serviceInterface="com.asseco.aha.training.ws.calc.srv.v1.CalcPortType"
 		p:namespaceUri="http://ws.server.ws.training.aha.asseco.com/"
-		p:serviceName="CalculatorWebServiceService" p:portName="CalculatorWebServicePort"
+		p:serviceName="CalcService" p:portName="CalcPort"
 		p:lookupServiceOnStartup="false"
-		p:wsdlDocumentUrl="http://localhost:8080/ws-server-as/CalculatorWebService?WSDL" />
+		p:wsdlDocumentUrl="http://localhost:8080/ws-server-as/CalcService?WSDL" />
 	
 </beans>
