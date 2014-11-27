@@ -13,9 +13,6 @@ import com.asseco.aha.training.ws.server.service.HelloService;
 @Addressing
 public class HelloWebService extends AbstractSoapWebService {
 
-    /**
-     * Class logger
-     */
     private static final Logger LOG = LoggerFactory.getLogger(HelloWebService.class);
 
     @Autowired

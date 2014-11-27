@@ -1,15 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
 		<groupId>com.asseco.aha.training.ws</groupId>
 		<artifactId>ws-parent</artifactId>
-		<version>0.0.2-SNAPSHOT</version>
+		<version>0.0.3-SNAPSHOT</version>
+		<relativePath>../ws-training-root</relativePath>
 	</parent>
 
-	<artifactId>ws-training-api</artifactId>
+	<artifactId>ws-api</artifactId>
 	<packaging>jar</packaging>
+
+	<name>WS-Training :: ${project.artifactId}</name>
+	<description>Generated API (from WSDL) of exposed SOAP services</description>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jaxb</groupId>
+			<artifactId>jaxb-runtime</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.spec</groupId>
+			<artifactId>jboss-javaee-7.0</artifactId>
+			<type>pom</type>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>
@@ -17,7 +45,7 @@
 				<!-- http://cxf.apache.org/docs/maven-cxf-codegen-plugin-wsdl-to-java.html -->
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-codegen-plugin</artifactId>
-				<version>3.0.2</version>
+				<version>3.2.6</version>
 				<executions>
 					<execution>
 						<id>generate-sources</id>
@@ -32,8 +60,8 @@
 								<wsdlOption>
 									<wsdl>${basedir}/src/main/resources/wsdl/ws-training-calc.wsdl</wsdl>
 									<extraargs>
-                                        <extraarg>-client</extraarg>
-                                    </extraargs>
+										<extraarg>-client</extraarg>
+									</extraargs>
 								</wsdlOption>
 							</wsdlOptions>
 						</configuration>
@@ -42,9 +70,16 @@
 						</goals>
 					</execution>
 				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.glassfish.jaxb</groupId>
+						<artifactId>jaxb-runtime</artifactId>
+						<version>${jaxb.version}</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
-  
+
 </project>
 

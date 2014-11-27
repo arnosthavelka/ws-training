@@ -1,34 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
 		<groupId>com.asseco.aha.training.ws</groupId>
 		<artifactId>ws-parent</artifactId>
-		<version>0.0.2-SNAPSHOT</version>
+		<version>0.0.3-SNAPSHOT</version>
+		<relativePath>../ws-training-root</relativePath>
 	</parent>
 
 	<artifactId>ws-server-cxf</artifactId>
-    <packaging>war</packaging>
+	<packaging>war</packaging>
 
 	<name>WS-Training :: ${project.artifactId}</name>
 	<description>Implementation of WS server side (CXF)</description>
-
-	<properties>
-		<!-- WS-Training -->
-		<ws-training-api.version>0.0.2-SNAPSHOT</ws-training-api.version>
-		<cxf.version>3.0.2</cxf.version>
-	</properties>
 
 	<dependencies>
 		<!-- WS-Training -->
 		<dependency>
 			<groupId>com.asseco.aha.training.ws</groupId>
-			<artifactId>ws-training-api</artifactId>
-			<version>${ws-training-api.version}</version>
+			<artifactId>ws-api</artifactId>
+			<version>${project.version}</version>
 		</dependency>
-	
+
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -51,26 +47,20 @@
 			<artifactId>spring-aspects</artifactId>
 		</dependency>
 		<dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-oxm</artifactId>
-        </dependency>
-		
-        <!-- Apache CXF -->
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+		</dependency>
+
+		<!-- Apache CXF -->
 		<dependency>
 			<groupId>org.apache.cxf</groupId>
 			<artifactId>cxf-rt-frontend-jaxws</artifactId>
 			<version>${cxf.version}</version>
 		</dependency>
-		<!-- dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
-			<version>${cxf.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-rs-extension-providers</artifactId>
-			<version>${cxf.version}</version>
-		</dependency-->		
+		<!-- dependency> <groupId>org.apache.cxf</groupId> <artifactId>cxf-rt-frontend-jaxrs</artifactId> 
+			<version>${cxf.version}</version> </dependency> <dependency> <groupId>org.apache.cxf</groupId> 
+			<artifactId>cxf-rt-rs-extension-providers</artifactId> <version>${cxf.version}</version> 
+			</dependency -->
 
 		<!-- Logging -->
 		<dependency>
@@ -78,22 +68,14 @@
 			<artifactId>slf4j-api</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>jcl-over-slf4j</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-		</dependency>
-		
+
 		<!-- JavaEE -->
 		<dependency>
 			<groupId>org.jboss.spec</groupId>
-			<artifactId>jboss-javaee-6.0</artifactId>
+			<artifactId>jboss-javaee-7.0</artifactId>
 			<type>pom</type>
 			<scope>provided</scope>
 		</dependency>
@@ -102,37 +84,23 @@
 		<dependency>
 			<groupId>de.sven-jacobs</groupId>
 			<artifactId>loremipsum</artifactId>
-			<version>1.0</version>
 		</dependency>
 	</dependencies>
 
 	<build>
 		<finalName>${project.artifactId}</finalName>
-		
+
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
+				<groupId>org.wildfly.plugins</groupId>
+				<artifactId>wildfly-maven-plugin</artifactId>
+				<version>1.2.1.Final</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<id>wildfly-local</id>
+					<hostname>127.0.0.1</hostname>
+					<port>9990</port>
 				</configuration>
 			</plugin>
-
-			<plugin>
-				<groupId>org.jboss.as.plugins</groupId>
-				<artifactId>jboss-as-maven-plugin</artifactId>
-				<version>7.6.Final</version>
-				<configuration>
-					<hostname>localhost</hostname>
-					<serverId>jboss-as</serverId>
-					<fileNames>
-						<fileName>${basedir}/target/${project.artifactId}.war</fileName>
-					</fileNames>
-				</configuration>
-			</plugin>
-			
 		</plugins>
 	</build>
 

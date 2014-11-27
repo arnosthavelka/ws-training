@@ -6,26 +6,22 @@
 	<parent>
 		<groupId>com.asseco.aha.training.ws</groupId>
 		<artifactId>ws-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.3-SNAPSHOT</version>
+		<relativePath>../ws-training-root</relativePath>
 	</parent>
 
-	<artifactId>ws-client</artifactId>
+	<artifactId>ws-client-jaxws</artifactId>
     <packaging>jar</packaging>
 
-	<name>WS-training server</name>
+	<name>WS-Training :: ${project.artifactId}</name>
 	<description>Implementation of WS client side</description>
-
-	<properties>
-		<!-- WS-Training -->
-		<ws-training-api.version>0.0.1-SNAPSHOT</ws-training-api.version>
-	</properties>
 
 	<dependencies>
 		<!-- WS-Training -->
 		<dependency>
 			<groupId>com.asseco.aha.training.ws</groupId>
-			<artifactId>ws-server-api</artifactId>
-			<version>${ws-training-api.version}</version>
+			<artifactId>ws-api</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 		
 		<!-- Spring -->
@@ -52,10 +48,14 @@
 			
 		<!-- JavaEE -->
 		<dependency>
-			<groupId>org.jboss.spec</groupId>
-			<artifactId>jboss-javaee-6.0</artifactId>
-			<type>pom</type>
-			<scope>provided</scope>
+			<groupId>com.sun.xml.ws</groupId>
+			<artifactId>rt</artifactId>
+			<version>${jaxb.version}</version>
+		</dependency>
+		<!-- JAX-B for JDK9+ -->
+		<dependency>
+			<groupId>org.glassfish.jaxb</groupId>
+			<artifactId>jaxb-runtime</artifactId>
 		</dependency>
 	</dependencies>
 

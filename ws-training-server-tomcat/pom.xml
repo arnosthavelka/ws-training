@@ -6,7 +6,8 @@
 	<parent>
 		<groupId>com.asseco.aha.training.ws</groupId>
 		<artifactId>ws-parent</artifactId>
-		<version>0.0.2-SNAPSHOT</version>
+		<version>0.0.3-SNAPSHOT</version>
+		<relativePath>../ws-training-root</relativePath>
 	</parent>
 
 	<artifactId>ws-server-tomcat</artifactId>
@@ -15,17 +16,12 @@
 	<name>WS-Training :: ${project.artifactId}</name>
 	<description>Implementation of WS server side (for Tomcat)</description>
 
-	<properties>
-		<!-- WS-Training -->
-		<ws-training-api.version>0.0.2-SNAPSHOT</ws-training-api.version>
-	</properties>
-
 	<dependencies>
 		<!-- WS-Training -->
 		<dependency>
 			<groupId>com.asseco.aha.training.ws</groupId>
-			<artifactId>ws-training-api</artifactId>
-			<version>${ws-training-api.version}</version>
+			<artifactId>ws-api</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 	
 		<!-- Spring -->
@@ -60,29 +56,21 @@
 			<artifactId>slf4j-api</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>jcl-over-slf4j</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
 		</dependency>	
 		
 		<!-- JavaEE -->
 		<dependency>
 			<groupId>org.jboss.spec</groupId>
-			<artifactId>jboss-javaee-6.0</artifactId>
+			<artifactId>jboss-javaee-7.0</artifactId>
 			<type>pom</type>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.xml.ws</groupId>
 			<artifactId>jaxws-rt</artifactId>
-			<version>2.2.8</version>
+			<version>${jaxb.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		
@@ -93,21 +81,10 @@
 		
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
-				</configuration>
-			</plugin>
-
-			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.2</version>
 			</plugin>		
-			
 		</plugins>
 	</build>
 
