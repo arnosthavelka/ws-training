@@ -1,5 +1,5 @@
 # ws-training
-[![Travis Build Status][travis-image]][travis-url-main] [![Sonar quality gate][sonar-quality-gate]][sonar-url] [![Sonar coverage][sonar-coverage]][sonar-url] [![Sonar bugs][sonar-bugs]][sonar-url] [![Sonar vulnerabilities][sonar-vulnerabilities]][sonar-url]
+[![Travis Build Status][travis-image]][travis-url-main]
 
 This repository serves as sources for SOAP webservice presentation..
 
