@@ -1,42 +1,33 @@
 package com.asseco.aha.training.ws.server.ws;
 
-import javax.annotation.Resource;
 import javax.xml.transform.Source;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.ws.Provider;
-import javax.xml.ws.WebServiceContext;
 import javax.xml.ws.WebServiceProvider;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.asseco.aha.training.ws.server.ws.util.XmlProcessor;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Component("providerBean")
 @javax.xml.ws.ServiceMode(value = javax.xml.ws.Service.Mode.PAYLOAD)
 @WebServiceProvider
+@Slf4j
 public class ProviderWebService implements Provider<Source> {
-
-    /**
-     * Class logger
-     */
-    private static final Logger LOG = LoggerFactory.getLogger(ProviderWebService.class);
 
     @Autowired
     private XmlProcessor xp;
 
-    @Resource
-    private WebServiceContext context;
-
     @Override
     public Source invoke(Source request) {
-        LOG.debug("Provider invoke started ...");
+		log.debug("Provider invoke started ...");
 
         String response = prepareResponse();
+		log.debug(response);
 
-        LOG.debug(response);
         return new DOMSource(xp.convert2dom(response));
     }
 

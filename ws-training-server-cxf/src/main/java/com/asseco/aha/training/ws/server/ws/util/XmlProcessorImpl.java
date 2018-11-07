@@ -20,21 +20,17 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
-@Service
-public class XmlProcessorImpl implements XmlProcessor {
+import lombok.extern.slf4j.Slf4j;
 
-    /**
-     * Class logger.
-     */
-    private static final Logger LOG = LoggerFactory.getLogger(XmlProcessorImpl.class);
+@Service
+@Slf4j
+public class XmlProcessorImpl implements XmlProcessor {
 
     private TransformerFactory tf = TransformerFactory.newInstance();
     private XPathFactory xf;
@@ -56,11 +52,6 @@ public class XmlProcessorImpl implements XmlProcessor {
         return transformer;
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see com.asseco.aha.training.ws.server.ws.util.XmlProcessor#source2String(javax.xml.transform.Source)
-     */
     @Override
     public String convert2String(Source source) {
         try {
@@ -70,16 +61,11 @@ public class XmlProcessorImpl implements XmlProcessor {
             transformer.transform(source, new StreamResult(sw));
             return sw.toString();
         } catch (Exception ex) {
-            LOG.error("Error reading XML (from SOAP message)!", ex);
+			log.error("Error reading XML (from SOAP message)!", ex);
             return "N/A";
         }
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see com.asseco.aha.training.ws.server.ws.util.XmlProcessor#source2dom(javax.xml.transform.Source)
-     */
     @Override
     public Document convert2dom(Source source) {
         try {
@@ -89,16 +75,11 @@ public class XmlProcessorImpl implements XmlProcessor {
             transformer.transform(source, dom);
             return (Document) dom.getNode();
         } catch (Exception ex) {
-            LOG.error("Error in converting XML (from SOAP message) to to DOM!", ex);
+			log.error("Error in converting XML (from SOAP message) to to DOM!", ex);
             return null;
         }
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see com.asseco.aha.training.ws.server.ws.util.XmlProcessor#convert2dom(java.lang.String)
-     */
     @Override
     public Document convert2dom(String source) {
         try {
@@ -106,16 +87,11 @@ public class XmlProcessorImpl implements XmlProcessor {
             Document doc = builder.parse(new InputSource(new StringReader(source)));
             return doc;
         } catch (Exception e) {
-            e.printStackTrace();
+			log.error("Error in converting XML (from SOAP message) to to DOM!", e);
+			return null;
         }
-        return null;
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see com.asseco.aha.training.ws.server.ws.util.XmlProcessor#applyXpath(java.lang.String, org.w3c.dom.Element)
-     */
     @Override
     public List<Element> applyXpath(String xpath, Element element) {
         List<Element> response = new ArrayList<Element>();
@@ -126,9 +102,9 @@ public class XmlProcessorImpl implements XmlProcessor {
             for (int i = 0; i < nodes.getLength(); ++i) {
                 response.add((Element) nodes.item(i));
             }
+			return response;
         } catch (XPathExpressionException e) {
             throw new RuntimeException("Unexpected Xpath processing error!", e);
         }
-        return response;
     }
 }

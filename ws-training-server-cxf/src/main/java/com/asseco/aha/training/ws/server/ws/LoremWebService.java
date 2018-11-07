@@ -4,35 +4,31 @@ import javax.activation.DataHandler;
 import javax.jws.WebMethod;
 import javax.mail.util.ByteArrayDataSource;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.asseco.aha.training.ws.server.service.LoremService;
 
-@Component("loremBean")
-public class LoremWebService {
+import lombok.extern.slf4j.Slf4j;
 
-    /**
-     * Class logger
-     */
-    private static final Logger LOG = LoggerFactory.getLogger(LoremWebService.class);
+@Component("loremBean")
+@Slf4j
+public class LoremWebService {
 
     @Autowired
     private LoremService service;
 
     @WebMethod
     public byte[] generate(int paraCount) {
-        LOG.info("Starting lorem ipsum WS method ...");
-        String text = service.generate(paraCount);
+		log.info("Starting lorem ipsum WS method ...");
+        String text = service.generateText(paraCount);
 
         return text.getBytes();
     }
 
     public DataHandler generateAsText(int paraCount) {
-        LOG.info("Starting lorem ipsum WS method ...");
-        String text = service.generate(paraCount);
+		log.info("Starting lorem ipsum WS method ...");
+        String text = service.generateText(paraCount);
 
         return new DataHandler(new ByteArrayDataSource(text.getBytes(), "text/plain"));
     }

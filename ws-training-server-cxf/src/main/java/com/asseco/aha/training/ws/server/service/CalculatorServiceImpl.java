@@ -7,11 +7,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class CalculatorServiceImpl implements CalculatorService {
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.asseco.aha.training.ws.server.service.CalulatorService#add(java.lang.Integer[])
-	 */
 	@Override
 	public Integer add(List<Integer> values) {
 		int value = 0;
@@ -21,11 +16,6 @@ public class CalculatorServiceImpl implements CalculatorService {
 		return value;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.asseco.aha.training.ws.server.service.CalulatorService#multiply(java.lang.Integer[])
-	 */
 	@Override
 	public Long multiply(List<Integer> values) {
 		long value = 0;
