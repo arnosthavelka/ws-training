@@ -1,7 +1,18 @@
 <jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.2">
-	<deployment>
+	<!-- deployment>
 		<dependencies>
 			<module name="org.apache.cxf" services="export" export="true" />
 		</dependencies>
-	</deployment>
+	</deployment-->
+	<deployment>
+		<exclude-subsystems>
+			<!-- https://developer.jboss.org/thread/221654 -->
+			<subsystem name="webservices" />
+		</exclude-subsystems>
+		<dependencies>
+			<module name="org.apache.cxf" />
+			<module name="org.apache.cxf.impl" />
+<!-- 			<module name="org.springframework.spring" export="true" meta-inf="export" /> -->
+		</dependencies>
+	</deployment>  
 </jboss-deployment-structure>

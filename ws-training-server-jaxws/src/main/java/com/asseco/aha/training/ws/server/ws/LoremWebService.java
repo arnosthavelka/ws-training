@@ -5,34 +5,30 @@ import javax.jws.WebService;
 import javax.mail.util.ByteArrayDataSource;
 import javax.xml.ws.soap.MTOM;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.asseco.aha.training.ws.server.service.LoremService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @WebService
 @MTOM(threshold = 1024)
+@Slf4j
 public class LoremWebService extends AbstractSoapWebService {
-
-	/**
-	 * Class logger
-	 */
-	private static final Logger LOG = LoggerFactory.getLogger(LoremWebService.class);
 
 	@Autowired
 	private LoremService service;
 
 	public byte[] generate(int paraCount) {
-		LOG.info("Starting lorem ipsum WS method ...");
-		String text = service.generate(paraCount);
+		log.info("Starting lorem ipsum WS method ...");
+		String text = service.generateText(paraCount);
 
 		return text.getBytes();
 	}
 
 	public DataHandler generateAsText(int paraCount) {
-		LOG.info("Starting lorem ipsum WS method ...");
-		String text = service.generate(paraCount);
+		log.info("Starting lorem ipsum WS method ...");
+		String text = service.generateText(paraCount);
 
 		return new DataHandler(new ByteArrayDataSource(text.getBytes(), "text/plain"));
 	}

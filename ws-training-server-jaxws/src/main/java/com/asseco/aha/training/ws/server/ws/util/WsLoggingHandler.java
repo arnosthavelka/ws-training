@@ -14,12 +14,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class WsLoggingHandler implements SOAPHandler<SOAPMessageContext> {
 
-	/**
-	 * Basic class logger.
-	 */
-	private static final Logger LOG = LoggerFactory.getLogger(WsLoggingHandler.class);
 	private static String requestString = "\"\n******************************** WS payload ( REQUEST ) ************************************ \n"
 			+ "{}\n******************************** WS payload END ( REQEUST ) ********************************";
 	private static String responseString = "\"\n******************************** WS payload ( RESPONSE ) ************************************ \n"
@@ -32,7 +31,7 @@ public class WsLoggingHandler implements SOAPHandler<SOAPMessageContext> {
 
 	@PostConstruct
 	private void init() {
-		LOG.info("Spring initialization ...");
+		log.info("Spring initialization ...");
 		SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
 	}
 
@@ -45,9 +44,7 @@ public class WsLoggingHandler implements SOAPHandler<SOAPMessageContext> {
 	}
 
 	private void log(SOAPMessageContext messageContext) {
-		if (LOG.isTraceEnabled()) {
-			LOG.trace("Server : handleMessage()......");
-		}
+		log.trace("Server : handleMessage()......");
 
 		try {
 			createLoggers();
@@ -64,25 +61,25 @@ public class WsLoggingHandler implements SOAPHandler<SOAPMessageContext> {
 			logger.debug(isResponse ? responseString : requestString, xp.convert2String(msg.getSOAPPart().getContent()));
 
 		} catch (Exception ex) {
-			LOG.error("WS content logging error", ex);
+			log.error("WS content logging error", ex);
 		}
 	}
 
 	@Override
 	public boolean handleFault(SOAPMessageContext context) {
-		LOG.trace("Server : handleFault()......");
+		log.trace("Server : handleFault()......");
 		return true;
 	}
 
 	@Override
 	public void close(MessageContext context) {
-		LOG.trace("Server : close()......");
+		log.trace("Server : close()......");
 
 	}
 
 	@Override
 	public Set<QName> getHeaders() {
-		LOG.trace("Server : getHeaders()......");
+		log.trace("Server : getHeaders()......");
 		return null;
 	}
 
@@ -90,7 +87,7 @@ public class WsLoggingHandler implements SOAPHandler<SOAPMessageContext> {
 
 	private void createLoggers() {
 		if (loggerRequest == null || loggerResponse == null) {
-			LOG.info("Creating loggers: " + LOGGER_PREFIX + ".request and " + LOGGER_PREFIX + ".response");
+			log.info("Creating loggers: " + LOGGER_PREFIX + ".request and " + LOGGER_PREFIX + ".response");
 			loggerRequest = LoggerFactory.getLogger(LOGGER_PREFIX + ".request");
 			loggerResponse = LoggerFactory.getLogger(LOGGER_PREFIX + ".response");
 		}

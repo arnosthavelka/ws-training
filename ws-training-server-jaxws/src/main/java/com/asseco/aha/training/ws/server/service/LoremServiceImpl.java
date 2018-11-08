@@ -16,18 +16,8 @@ public class LoremServiceImpl implements LoremService {
 		loremIpsum = new LoremIpsum();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.asseco.aha.training.ws.server.service.HelloService#sayHello(java. lang.String)
-	 */
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.asseco.aha.training.ws.server.service.LoremService#generate(int)
-	 */
 	@Override
-	public String generate(int paraCount) {
+	public String generateText(int paraCount) {
 		return loremIpsum.getParagraphs(paraCount);
 	}
 
