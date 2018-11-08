@@ -4,7 +4,6 @@ import java.io.StringReader;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
 import javax.xml.soap.MessageFactory;
 import javax.xml.soap.SOAPException;
 import javax.xml.soap.SOAPMessage;
@@ -12,25 +11,20 @@ import javax.xml.soap.SOAPPart;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.ws.Provider;
-import javax.xml.ws.WebServiceContext;
 import javax.xml.ws.WebServiceProvider;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.w3c.dom.Document;
 
 import com.asseco.aha.training.ws.server.service.ProviderService;
 import com.asseco.aha.training.ws.server.ws.util.XmlProcessor;
 
+import lombok.extern.slf4j.Slf4j;
+
 @javax.xml.ws.ServiceMode(value = javax.xml.ws.Service.Mode.MESSAGE)
 @WebServiceProvider(wsdlLocation = "wsdl/ws-training-provider.wsdl", serviceName = "ProviderService", portName = "ProviderPort", targetNamespace = "urn:com:asseco:aha:training:ws:provider:srv:v1")
+@Slf4j
 public class ProviderWebService extends AbstractSoapWebService implements Provider<SOAPMessage> {
-
-    /**
-     * Class logger
-     */
-    private static final Logger LOG = LoggerFactory.getLogger(ProviderWebService.class);
 
     @Autowired
     private XmlProcessor xp;
@@ -40,21 +34,18 @@ public class ProviderWebService extends AbstractSoapWebService implements Provid
 
     private MessageFactory mf;
 
-    @Resource
-    private WebServiceContext context;
-
     @PostConstruct
     private void init() {
         try {
             mf = MessageFactory.newInstance();
         } catch (SOAPException e) {
-            LOG.error("Initialization error ...", e);
+			log.error("Initialization error ...", e);
         }
     }
 
     @Override
     public SOAPMessage invoke(SOAPMessage request) {
-        LOG.debug("Provider invoke started ...");
+		log.debug("Provider invoke started ...");
         try {
             SOAPPart soapPart = request.getSOAPPart();
             Document doc = xp.convert2dom(soapPart.getContent());
@@ -62,11 +53,11 @@ public class ProviderWebService extends AbstractSoapWebService implements Provid
             List<String> values = ps.parseContent(doc, request.getSOAPHeader());
             String response = prepareResponse(values);
 
-            LOG.debug(response);
+			log.debug(response);
             return makeSOAPMessage(response);
 
         } catch (SOAPException e) {
-            LOG.error("Error in processing request", e);
+			log.error("Error in processing request", e);
             throw new RuntimeException("Unexpected error ...", e);
         }
     }
