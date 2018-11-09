@@ -8,11 +8,11 @@
 		<exclude-subsystems>
 			<!-- https://developer.jboss.org/thread/221654 -->
 			<subsystem name="webservices" />
+<!-- 			<subsystem name="jaxrs" /> -->
 		</exclude-subsystems>
 		<dependencies>
-			<module name="org.apache.cxf" />
-			<module name="org.apache.cxf.impl" />
-<!-- 			<module name="org.springframework.spring" export="true" meta-inf="export" /> -->
+			<module name="javax.xml.ws.api" export="true" />
+			<module name="javax.jws.api" export="true" />
 		</dependencies>
 	</deployment>  
 </jboss-deployment-structure>
