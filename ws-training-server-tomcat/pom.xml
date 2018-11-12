@@ -62,16 +62,9 @@
 		
 		<!-- JavaEE -->
 		<dependency>
-			<groupId>org.jboss.spec</groupId>
-			<artifactId>jboss-javaee-7.0</artifactId>
-			<type>pom</type>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
 			<groupId>com.sun.xml.ws</groupId>
 			<artifactId>jaxws-rt</artifactId>
 			<version>${jaxb.version}</version>
-			<scope>provided</scope>
 		</dependency>
 		
 	</dependencies>
