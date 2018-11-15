@@ -18,6 +18,9 @@ public class HelloWebService {
 	private HelloService service;
 
 	public String sayHello(String name) {
+		if (service == null) {
+			initSpring();
+		}
 		log.info("Starting hello WS method ...");
 		return service.sayHello(name);
 	}

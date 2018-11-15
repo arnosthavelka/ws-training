@@ -18,73 +18,26 @@
 		<maven.compiler.source>${java.release}</maven.compiler.source>
 		<maven.compiler.target>${java.release}</maven.compiler.target>
 		
-		<spring.version>5.1.2.RELEASE</spring.version>
+		<spring-boot.version>2.1.0.RELEASE</spring-boot.version>
+<!-- 		<spring.version>5.1.2.RELEASE</spring.version> -->
 		<cxf.version>3.2.7</cxf.version>
 		<lombok.version>1.18.2</lombok.version>
 		
-		<slf4j.version>1.7.25</slf4j.version>
-		<log4j.version>1.2.17</log4j.version>
-		<logback.version>1.2.3</logback.version>
+<!-- 		<slf4j.version>1.7.25</slf4j.version> -->
+<!-- 		<log4j.version>1.2.17</log4j.version> -->
+<!-- 		<logback.version>1.2.3</logback.version> -->
 		<java-ee.version>1.1.1.Final</java-ee.version>
 		<jaxb.version>2.3.1</jaxb.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
-			<!-- Spring -->
 			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-core</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-test</artifactId>
-				<version>${spring.version}</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-context</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-web</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-aspects</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-oxm</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-			
-			<!-- Logging -->
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-				<version>${slf4j.version}</version>
-			</dependency>
-			<dependency>
-				<!-- required by Spring -->
-				<groupId>org.slf4j</groupId>
-				<artifactId>jcl-over-slf4j</artifactId>
-				<version>${slf4j.version}</version>
-			</dependency>		
-			<dependency>
-				<groupId>ch.qos.logback</groupId>
-				<artifactId>logback-classic</artifactId>
-				<version>${logback.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>ch.qos.logback</groupId>
-				<artifactId>logback-core</artifactId>
-				<version>${logback.version}</version>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-parent</artifactId>
+				<version>${spring-boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 			
 			<!-- JAX-B for JDK9+ -->
@@ -116,14 +69,12 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>${lombok.version}</version>
 			<scope>provided</scope>
 		</dependency>	
 		<!-- Testing -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

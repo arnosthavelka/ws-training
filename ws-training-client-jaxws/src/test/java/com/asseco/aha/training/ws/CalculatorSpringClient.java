@@ -8,7 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import com.asseco.aha.training.ws.calc.srv.v1.CalcPortType;
 import com.asseco.aha.training.ws.types.v1.AddRequest;
@@ -16,7 +16,7 @@ import com.asseco.aha.training.ws.types.v1.AddResponse;
 import com.asseco.aha.training.ws.types.v1.ObjectFactory;
 
 @ContextConfiguration("classpath:/spring/application-context-test.xml")
-@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(SpringRunner.class)
 public class CalculatorSpringClient {
 
     @Autowired
