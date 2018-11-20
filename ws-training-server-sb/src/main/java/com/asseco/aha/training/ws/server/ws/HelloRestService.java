@@ -7,7 +7,7 @@ import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 import com.asseco.aha.training.ws.server.service.HelloService;
 
-// http://localhost:8080/hello?name=Gabriel
+// http://localhost:8080/ws-server-sb/hello?name=Gabriel
 @RestController
 public class HelloRestService {
 

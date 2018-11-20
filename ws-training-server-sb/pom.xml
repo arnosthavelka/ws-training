@@ -3,49 +3,48 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.asseco.aha.training.ws</groupId>
 	<artifactId>ws-server-sb</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
     <packaging>war</packaging>
 
 	<name>WS-training server</name>
 	<description>Implementation of WS server side</description>
 
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.1.9.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<groupId>com.asseco.aha.training.ws</groupId>
+		<artifactId>ws-parent</artifactId>
+		<version>0.0.3-SNAPSHOT</version>
+		<relativePath>../ws-training-root</relativePath>
 	</parent>
+
+	<properties>
+		<start-class>com.asseco.aha.training.ws.Application</start-class>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-           <!-- exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-tomcat</artifactId>
-                </exclusion>
-            </exclusions-->			
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- JavaEE -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<groupId>org.jboss.spec</groupId>
+			<artifactId>jboss-javaee-7.0</artifactId>
+			<type>pom</type>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<start-class>com.asseco.aha.training.ws.Application</start-class>
-		<java.version>1.7</java.version>
-	</properties>
 
 	<build>
 		<finalName>${project.artifactId}</finalName>
@@ -59,10 +58,11 @@
 			<plugin>
 				<groupId>org.wildfly.plugins</groupId>
 				<artifactId>wildfly-maven-plugin</artifactId>
-				<version>1.0.2.Final</version>
+				<version>1.2.1.Final</version>
 				<configuration>
-					<hostname>localhost</hostname>
-					<username>admin</username>
+					<id>wildfly-local</id>
+					<hostname>127.0.0.1</hostname>
+					<port>9990</port>
 				</configuration>
 			</plugin>
 
