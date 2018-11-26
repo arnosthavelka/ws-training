@@ -18,9 +18,9 @@
 		<maven.compiler.source>${java.release}</maven.compiler.source>
 		<maven.compiler.target>${java.release}</maven.compiler.target>
 		
-		<spring-boot.version>2.1.0.RELEASE</spring-boot.version>
+		<spring-boot.version>2.1.1.RELEASE</spring-boot.version>
+		<junit.jupiter.version>5.3.2</junit.jupiter.version>
 		<cxf.version>3.2.7</cxf.version>
-		<lombok.version>1.18.2</lombok.version>
 		
 		<java-ee.version>1.1.1.Final</java-ee.version>
 		<jaxb.version>2.3.1</jaxb.version>
@@ -28,6 +28,7 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<!-- Spring Boot -->
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-parent</artifactId>
@@ -35,6 +36,14 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+			<!-- JUnit 5 -->
+	        <dependency>
+	            <groupId>org.junit</groupId>
+	            <artifactId>junit-bom</artifactId>
+	            <version>${junit.jupiter.version}</version>
+	            <type>pom</type>
+	            <scope>import</scope>
+	        </dependency>
 			
 			<!-- JAX-B for JDK9+ -->
 			<dependency>
@@ -67,12 +76,6 @@
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
 		</dependency>	
-		<!-- Testing -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
 	</dependencies>
 
 </project>

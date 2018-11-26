@@ -1,13 +1,14 @@
 package com.asseco.aha.training.ws;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
 import javax.xml.namespace.QName;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import com.asseco.aha.training.ws.calc.srv.v1.CalcPortType;
 import com.asseco.aha.training.ws.calc.srv.v1.CalcService;
@@ -31,7 +32,7 @@ public class CalculatorGeneratedClient {
         inputs.add(1);
 
         AddResponse response = calc.add(ar);
-        Assert.assertEquals(8, response.getResult());
+		assertThat(8).isEqualTo(response.getResult());
 
     }
 
