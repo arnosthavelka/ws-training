@@ -7,7 +7,7 @@
 		<groupId>com.asseco.aha.training.ws</groupId>
 		<artifactId>ws-parent</artifactId>
 		<version>0.0.3-SNAPSHOT</version>
-		<relativePath>../ws-training-root</relativePath>
+		<relativePath>../ws-training-parent</relativePath>
 	</parent>
 
 	<artifactId>ws-client-jaxws</artifactId>
