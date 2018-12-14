@@ -29,7 +29,7 @@ The collection of implementation examples for SOAP webservice usage.
 | SpringBoot       | 2.1.1        | all                                                | Dependency Management          |
 | Lombok           | N/A          | all                                                | Simplification of Java classes |
 | JUnit            | 5.3.2        | ws-training-client-jaxws                           | Unit testing with JUnit5       |
-| CXF              | 3.2.7        | ws-training-cxf                                    | WA framework                   |
+| CXF              | 3.3.2        | ws-training-cxf                                    | WA framework                   |
 
 ## Services
 | Service          | Technology                                          |

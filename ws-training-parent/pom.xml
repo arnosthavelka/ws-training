@@ -20,7 +20,7 @@
 		
 		<spring-boot.version>2.1.1.RELEASE</spring-boot.version>
 		<junit.jupiter.version>5.3.2</junit.jupiter.version>
-		<cxf.version>3.2.7</cxf.version>
+		<cxf.version>3.3.2</cxf.version>
 		
 		<java-ee.version>1.1.1.Final</java-ee.version>
 		<jaxb.version>2.3.1</jaxb.version>
