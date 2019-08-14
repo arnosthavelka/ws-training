@@ -13,13 +13,13 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		
 		<!-- compiler properties -->
-		<java.release>10</java.release>
-		<maven.compiler.plugin.version>3.8.0</maven.compiler.plugin.version>
+		<java.release>11</java.release>
+		<maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
 		<maven.compiler.source>${java.release}</maven.compiler.source>
 		<maven.compiler.target>${java.release}</maven.compiler.target>
 		
-		<spring-boot.version>2.1.1.RELEASE</spring-boot.version>
-		<junit.jupiter.version>5.3.2</junit.jupiter.version>
+		<spring-boot.version>2.1.7.RELEASE</spring-boot.version>
+		<junit.jupiter.version>5.5.1</junit.jupiter.version>
 		<cxf.version>3.3.2</cxf.version>
 		
 		<java-ee.version>1.1.1.Final</java-ee.version>
