@@ -48,7 +48,7 @@ The collection of implementation examples for SOAP webservice usage.
 [travis-url-main]: https://travis-ci.org/arnosthavelka/ws-training
 [travis-image]: https://travis-ci.org/arnosthavelka/ws-training.svg?branch=master
 
-[sonar-url]: https://sonarcloud.io/dashboard?id=arnosthavelka_junit-poc
+[sonar-url]: https://sonarcloud.io/dashboard?id=arnosthavelka_ws-training
 [sonar-quality-gate]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_ws-training&metric=alert_status
 [sonar-coverage]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_ws-training&metric=coverage
 [sonar-bugs]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_ws-training&metric=bugs
