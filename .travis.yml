@@ -5,14 +5,14 @@ jdk:
   - oraclejdk11
 #  - openjdk11
 
-#addons:
-#  sonarcloud:
-#    organization: "arnosthavelka-github"
+addons:
+  sonarcloud:
+    organization: "arnosthavelka-github"
       
-#script:
-#  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar -Dsonar.login=${SONAR_TOKEN}
-
-
+script:
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Pcoverage -Dsonar.projectKey=arnosthavelka_security-poc
+  
 cache:
   directories:
     - '$HOME/.m2/repository'

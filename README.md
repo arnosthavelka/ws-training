@@ -1,5 +1,5 @@
 # ws-training
-[![Travis Build Status][travis-image]][travis-url-main]
+[![Travis Build Status][travis-image]][travis-url-main] [![Sonar quality gate][sonar-quality-gate]][sonar-url] [![Sonar coverage][sonar-coverage]][sonar-url] [![Sonar bugs][sonar-bugs]][sonar-url] [![Sonar vulnerabilities][sonar-vulnerabilities]][sonar-url]
 
 The collection of implementation examples for SOAP webservice usage.
 
@@ -47,3 +47,9 @@ The collection of implementation examples for SOAP webservice usage.
 
 [travis-url-main]: https://travis-ci.org/arnosthavelka/ws-training
 [travis-image]: https://travis-ci.org/arnosthavelka/ws-training.svg?branch=master
+
+[sonar-url]: https://sonarcloud.io/dashboard?id=arnosthavelka_junit-poc
+[sonar-quality-gate]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_ws-training&metric=alert_status
+[sonar-coverage]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_ws-training&metric=coverage
+[sonar-bugs]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_ws-training&metric=bugs
+[sonar-vulnerabilities]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_ws-training&metric=vulnerabilities
