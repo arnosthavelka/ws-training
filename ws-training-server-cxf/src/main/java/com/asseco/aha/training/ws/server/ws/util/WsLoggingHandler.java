@@ -1,5 +1,8 @@
 package com.asseco.aha.training.ws.server.ws.util;
 
+import static java.util.Collections.emptySet;
+import static javax.xml.ws.handler.MessageContext.MESSAGE_OUTBOUND_PROPERTY;
+
 import java.util.Set;
 
 import javax.annotation.PostConstruct;
@@ -48,8 +51,7 @@ public class WsLoggingHandler implements SOAPHandler<SOAPMessageContext> {
 
 		try {
 			createLoggers();
-			boolean isResponse = ((Boolean) messageContext.get(SOAPMessageContext.MESSAGE_OUTBOUND_PROPERTY))
-					.booleanValue();
+			boolean isResponse = ((Boolean) messageContext.get(MESSAGE_OUTBOUND_PROPERTY)).booleanValue();
 
 			Logger logger = isResponse ? loggerResponse : loggerRequest;
 			if (!logger.isDebugEnabled()) {
@@ -74,18 +76,17 @@ public class WsLoggingHandler implements SOAPHandler<SOAPMessageContext> {
 	@Override
 	public void close(MessageContext context) {
 		log.trace("Server : close()......");
-
 	}
 
 	@Override
 	public Set<QName> getHeaders() {
 		log.trace("Server : getHeaders()......");
-		return null;
+		return emptySet();
 	}
 
 	private static final String LOGGER_PREFIX = "com.asseco.aha.wslogger.abc";
 
-	private void createLoggers() {
+	private static void createLoggers() {
 		if (loggerRequest == null || loggerResponse == null) {
 			log.info("Creating loggers: " + LOGGER_PREFIX + ".request and " + LOGGER_PREFIX + ".response");
 			loggerRequest = LoggerFactory.getLogger(LOGGER_PREFIX + ".request");

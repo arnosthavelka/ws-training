@@ -77,7 +77,7 @@ public class XmlProcessorImpl implements XmlProcessor {
 
 	@Override
 	public List<Element> applyXpath(String xpath, Element element) {
-		List<Element> response = new ArrayList<Element>();
+		List<Element> response = new ArrayList<>();
 
 		XPath xPath = xf.newXPath();
 		try {

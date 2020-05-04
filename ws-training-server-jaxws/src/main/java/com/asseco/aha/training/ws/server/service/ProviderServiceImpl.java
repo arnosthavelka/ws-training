@@ -23,20 +23,18 @@ public class ProviderServiceImpl implements ProviderService {
 
 	@Override
 	public List<String> parseContent(Document doc, SOAPHeader headers) {
-		List<String> response = new ArrayList<String>();
+		List<String> response = new ArrayList<>();
 
-		//
-
-		processHeaders(doc, headers, response);
+		processHeaders(doc, response);
 		processValues(doc, response);
 
 		return response;
 	}
 
-	private void processHeaders(Document doc, SOAPHeader headers, List<String> response) {
+	private void processHeaders(Document doc, List<String> response) {
 
 		List<Element> nodes = xp.applyXpath("//*[local-name(.)='ExtendedProviderRequest']", doc.getDocumentElement());
-		if (nodes == null || nodes.size() == 0) {
+		if (nodes == null || nodes.isEmpty()) {
 			log.debug("provider echo called ...");
 			return;
 		}

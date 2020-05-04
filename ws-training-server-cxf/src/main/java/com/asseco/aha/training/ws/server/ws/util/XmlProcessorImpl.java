@@ -84,8 +84,7 @@ public class XmlProcessorImpl implements XmlProcessor {
     public Document convert2dom(String source) {
         try {
             DocumentBuilder builder = tbf.newDocumentBuilder();
-            Document doc = builder.parse(new InputSource(new StringReader(source)));
-            return doc;
+			return builder.parse(new InputSource(new StringReader(source)));
         } catch (Exception e) {
 			log.error("Error in converting XML (from SOAP message) to to DOM!", e);
 			return null;
@@ -94,7 +93,7 @@ public class XmlProcessorImpl implements XmlProcessor {
 
     @Override
     public List<Element> applyXpath(String xpath, Element element) {
-        List<Element> response = new ArrayList<Element>();
+		List<Element> response = new ArrayList<>();
 
         XPath xPath = xf.newXPath();
         try {
