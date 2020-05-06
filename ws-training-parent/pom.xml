@@ -19,12 +19,13 @@
 		<maven.compiler.target>${java.release}</maven.compiler.target>
 		<jacoco.version>0.8.5</jacoco.version>
 		
-		<spring-boot.version>2.1.7.RELEASE</spring-boot.version>
-		<junit.jupiter.version>5.5.1</junit.jupiter.version>
-		<cxf.version>3.3.2</cxf.version>
+		<spring-boot.version>2.2.6.RELEASE</spring-boot.version>
+		<junit.jupiter.version>5.6.2</junit.jupiter.version>
+		<cxf.version>3.3.6</cxf.version>
 		
-		<java-ee.version>1.1.1.Final</java-ee.version>
-		<jaxb.version>2.3.1</jaxb.version>
+		<jakarta-ee.version>1.0.1.Final</jakarta-ee.version>
+		<jaxb-runtime.version>2.3.3</jaxb-runtime.version>
+		<jaxb-core.version>2.3.0.1</jaxb-core.version>
 	</properties>
 
 	<dependencyManagement>
@@ -50,13 +51,20 @@
 			<dependency>
 				<groupId>org.glassfish.jaxb</groupId>
 				<artifactId>jaxb-runtime</artifactId>
-				<version>${jaxb.version}</version>
+				<version>${jaxb-runtime.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+			    <groupId>org.glassfish.jaxb</groupId>
+			    <artifactId>jaxb-core</artifactId>
+			    <version>${jaxb-core.version}</version>
+			    <scope>provided</scope>
 			</dependency>
 			<!-- JavaEE -->
 			<dependency>
 			    <groupId>org.jboss.spec</groupId>
-			    <artifactId>jboss-javaee-7.0</artifactId>
-			    <version>${java-ee.version}</version>
+			    <artifactId>jboss-jakartaee-8.0</artifactId>
+			    <version>${jakarta-ee.version}</version>
 			    <type>pom</type>
 			    <scope>provided</scope>
 			</dependency>

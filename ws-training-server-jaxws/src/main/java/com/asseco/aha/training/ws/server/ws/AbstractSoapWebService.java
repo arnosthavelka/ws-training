@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @HandlerChain(file = "/handler-chain.xml")
 @Slf4j
-abstract class AbstractSoapWebService {
+abstract class AbstractSoapWebService { // NOSONAR
 
 	@PostConstruct
 	private void initSpring() {

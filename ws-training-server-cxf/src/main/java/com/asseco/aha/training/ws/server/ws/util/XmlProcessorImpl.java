@@ -1,5 +1,10 @@
 package com.asseco.aha.training.ws.server.ws.util;
 
+import static javax.xml.transform.OutputKeys.ENCODING;
+import static javax.xml.transform.OutputKeys.INDENT;
+import static javax.xml.transform.OutputKeys.METHOD;
+import static javax.xml.transform.OutputKeys.OMIT_XML_DECLARATION;
+
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.util.ArrayList;
@@ -8,7 +13,6 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
@@ -45,10 +49,10 @@ public class XmlProcessorImpl implements XmlProcessor {
 
     private Transformer createTransformer() throws TransformerConfigurationException {
         Transformer transformer = tf.newTransformer();
-        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
-        transformer.setOutputProperty(OutputKeys.METHOD, "xml");
-        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-        transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+		transformer.setOutputProperty(OMIT_XML_DECLARATION, "no");
+		transformer.setOutputProperty(METHOD, "xml");
+		transformer.setOutputProperty(INDENT, "yes");
+		transformer.setOutputProperty(ENCODING, "UTF-8");
         return transformer;
     }
 

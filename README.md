@@ -7,7 +7,7 @@ The collection of implementation examples for SOAP webservice usage.
 * JDK 11
 * Maven 3
 * Lombok (installed into IDE)
-* WildFly 14
+* WildFly 19
 * Tomcat 9
 
 ## Features
@@ -24,12 +24,12 @@ The collection of implementation examples for SOAP webservice usage.
 | ---------------- | ------------ | --------------------------------------             | ------------------------------ |
 | Maven            | 3.x          | all                                                | Build                          |
 | Java             | 11           | all                                                | Java platform                  |
-| JavaEE           | 7.0          | ws-training-cxf, ws-training-jaxws, ws-training-sb | Java Enterprise Edition        |
-| JAX-B            | 2.3.1        | all                                                | Class binding                  |
-| SpringBoot       | 2.1.7        | all                                                | Dependency Management          |
+| JakartaEE        | 1.0.1        | ws-training-cxf, ws-training-jaxws, ws-training-sb | Java Enterprise Edition        |
+| JAX-B            | 2.3.3        | all                                                | Class binding                  |
+| SpringBoot       | 2.2.6        | all                                                | Dependency Management          |
 | Lombok           | N/A          | all                                                | Simplification of Java classes |
-| JUnit            | 5.5.1        | ws-training-client-jaxws                           | Unit testing with JUnit5       |
-| CXF              | 3.3.2        | ws-training-cxf                                    | WA framework                   |
+| JUnit            | 5.6.2        | ws-training-client-jaxws                           | Unit testing with JUnit5       |
+| CXF              | 3.3.6        | ws-training-cxf                                    | WA framework                   |
 
 ## Services
 | Service          | Technology                                          |

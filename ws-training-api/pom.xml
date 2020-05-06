@@ -29,13 +29,15 @@
 		<dependency>
 			<groupId>org.glassfish.jaxb</groupId>
 			<artifactId>jaxb-runtime</artifactId>
-			<scope>provided</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.glassfish.jaxb</groupId>
+		    <artifactId>jaxb-core</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.jboss.spec</groupId>
-			<artifactId>jboss-javaee-7.0</artifactId>
+			<artifactId>jboss-jakartaee-8.0</artifactId>
 			<type>pom</type>
-			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 
@@ -74,7 +76,7 @@
 					<dependency>
 						<groupId>org.glassfish.jaxb</groupId>
 						<artifactId>jaxb-runtime</artifactId>
-						<version>${jaxb.version}</version>
+						<version>${jaxb-runtime.version}</version>
 					</dependency>
 				</dependencies>
 			</plugin>

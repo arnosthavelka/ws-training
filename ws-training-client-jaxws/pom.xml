@@ -54,7 +54,7 @@
 		<dependency>
 			<groupId>com.sun.xml.ws</groupId>
 			<artifactId>rt</artifactId>
-			<version>${jaxb.version}</version>
+			<version>${jaxb-runtime.version}</version>
 		</dependency>
 		<!-- JAX-B for JDK9+ -->
 		<dependency>
