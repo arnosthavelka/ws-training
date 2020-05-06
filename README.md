@@ -7,7 +7,7 @@ The collection of implementation examples for SOAP webservice usage.
 * JDK 11
 * Maven 3
 * Lombok (installed into IDE)
-* WildFly 14
+* WildFly 19
 * Tomcat 9
 
 ## Features
