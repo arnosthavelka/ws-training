@@ -22,7 +22,7 @@ import com.asseco.aha.training.ws.server.ws.util.XmlProcessor;
 import lombok.extern.slf4j.Slf4j;
 
 @javax.xml.ws.ServiceMode(value = javax.xml.ws.Service.Mode.MESSAGE)
-@WebServiceProvider(wsdlLocation = "wsdl/ws-training-provider.wsdl", serviceName = "ProviderService", portName = "ProviderPort", targetNamespace = "urn:com:asseco:aha:training:ws:provider:srv:v1")
+@WebServiceProvider(wsdlLocation = "wsdl/ws-training-provider.wsdl", serviceName = "ProviderService", portName = "ProviderPort", targetNamespace = "urn:com:github:aha:training:ws:provider:srv:v1")
 @Slf4j
 public class ProviderWebService extends AbstractSoapWebService implements Provider<SOAPMessage> {
 

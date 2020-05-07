@@ -2,16 +2,14 @@
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
       xmlns:xs="http://www.w3.org/2001/XMLSchema"
       xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-      xmlns="urn:com:asseco:aha:training:ws:provider:srv:v1" 
-      xmlns:dto="urn:com:asseco:aha:training:ws:types:v1" 
-      targetNamespace="urn:com:asseco:aha:training:ws:provider:srv:v1"
+      xmlns="urn:com:github:aha:training:ws:provider:srv:v1" 
+      xmlns:dto="urn:com:github:aha:training:ws:types:v1" 
+      targetNamespace="urn:com:github:aha:training:ws:provider:srv:v1"
       name="ProviderAPI">
-
-	<wsdl:documentation>Version 0.0.1</wsdl:documentation>
 
 	<wsdl:types>
 		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-			<xsd:import namespace="urn:com:asseco:aha:training:ws:types:v1" schemaLocation="../xsd/ws-training-types.xsd" />
+			<xsd:import namespace="urn:com:github:aha:training:ws:types:v1" schemaLocation="../xsd/ws-training-types.xsd" />
 		</xsd:schema>
 	</wsdl:types>
 

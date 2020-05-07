@@ -11,9 +11,9 @@ import javax.xml.ws.Service;
 
 import org.junit.jupiter.api.Test;
 
-import com.asseco.aha.training.ws.calc.srv.v1.CalcPortType;
-import com.asseco.aha.training.ws.types.v1.AddRequest;
-import com.asseco.aha.training.ws.types.v1.AddResponse;
+import com.github.aha.training.ws.calc.srv.v1.CalcPortType;
+import com.github.aha.training.ws.types.v1.AddRequest;
+import com.github.aha.training.ws.types.v1.AddResponse;
 
 public class CalculatorRuntimeClient {
 

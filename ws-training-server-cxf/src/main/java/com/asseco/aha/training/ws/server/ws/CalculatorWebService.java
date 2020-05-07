@@ -2,11 +2,11 @@ package com.asseco.aha.training.ws.server.ws;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.asseco.aha.training.ws.calc.srv.v1.CalcPortType;
 import com.asseco.aha.training.ws.server.service.CalculatorService;
-import com.asseco.aha.training.ws.types.v1.AddRequest;
-import com.asseco.aha.training.ws.types.v1.AddResponse;
-import com.asseco.aha.training.ws.types.v1.ObjectFactory;
+import com.github.aha.training.ws.calc.srv.v1.CalcPortType;
+import com.github.aha.training.ws.types.v1.AddRequest;
+import com.github.aha.training.ws.types.v1.AddResponse;
+import com.github.aha.training.ws.types.v1.ObjectFactory;
 
 import lombok.extern.slf4j.Slf4j;
 

@@ -21,7 +21,7 @@
 	<!-- enable AOP	 -->
 	<aop:aspectj-autoproxy/>
 
-	<bean id="commonOF" class="com.asseco.aha.training.ws.types.v1.ObjectFactory" />
+	<bean id="commonOF" class="com.github.aha.training.ws.types.v1.ObjectFactory" />
 
 	<!-- define CXF interceptors (for request/response logging) -->
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
