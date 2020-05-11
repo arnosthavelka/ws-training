@@ -11,16 +11,16 @@
 	<!-- init spring context -->
 	<context:annotation-config/>
     <context:spring-configured/>
-    <context:component-scan base-package="com.asseco.aha.training.ws.server"/>
+    <context:component-scan base-package="com.github.aha.training.ws.server"/>
 
 	<!-- enable AOP	 -->
 	<aop:aspectj-autoproxy/>
 
-	<bean id="objectFactory" class="com.asseco.aha.training.ws.types.v1.ObjectFactory" />
+	<bean id="objectFactory" class="com.github.aha.training.ws.types.v1.ObjectFactory" />
     
     <bean id="CalculatorWS" class="org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean"
-		p:serviceInterface="com.asseco.aha.training.ws.calc.srv.v1.CalcPortType"
-		p:namespaceUri="http://ws.server.ws.training.aha.asseco.com/"
+		p:serviceInterface="com.github.aha.training.ws.calc.srv.v1.CalcPortType"
+		p:namespaceUri="http://ws.server.ws.training.aha.github.com/"
 		p:serviceName="CalcService" p:portName="CalcPort"
 		p:lookupServiceOnStartup="false"
 		p:wsdlDocumentUrl="http://localhost:8080/ws-server-as/CalcService?WSDL" />

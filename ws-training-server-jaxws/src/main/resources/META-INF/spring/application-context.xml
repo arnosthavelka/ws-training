@@ -11,7 +11,7 @@
 	<!-- init spring context -->
 	<context:annotation-config/>
     <context:spring-configured/>
-    <context:component-scan base-package="com.asseco.aha.training.ws.server"/>
+    <context:component-scan base-package="com.github.aha.training.ws.server"/>
 
 	<!-- enable AOP	 -->
 	<aop:aspectj-autoproxy/>
