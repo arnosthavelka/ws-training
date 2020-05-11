@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>com.asseco.aha.training.ws</groupId>
 		<artifactId>ws-parent</artifactId>
-		<version>0.0.3-SNAPSHOT</version>
+		<version>0.1.0-SNAPSHOT</version>
 		<relativePath>../ws-training-parent</relativePath>
 	</parent>
 
@@ -85,12 +85,6 @@
 			<plugin>
 				<groupId>org.wildfly.plugins</groupId>
 				<artifactId>wildfly-maven-plugin</artifactId>
-				<version>1.2.1.Final</version>
-				<configuration>
-					<id>wildfly-local</id>
-					<hostname>127.0.0.1</hostname>
-					<port>9990</port>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>

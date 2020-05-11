@@ -16,7 +16,7 @@
 	<!-- init spring context -->
 	<context:annotation-config/>
     <context:spring-configured/>
-    <context:component-scan base-package="com.asseco.aha.training.ws.server"/>
+    <context:component-scan base-package="com.github.aha.training.ws.server"/>
 
 	<!-- enable AOP	 -->
 	<aop:aspectj-autoproxy/>
@@ -45,7 +45,7 @@
 	</cxf:bus> 
   	
 	<!-- define CXF endpoints (WS)	-->
-	<jaxws:endpoint id="calcWS" implementor="com.asseco.aha.training.ws.server.ws.CalculatorWebService" address="/CalculatorWebService"/>
+	<jaxws:endpoint id="calcWS" implementor="com.github.aha.training.ws.server.ws.CalculatorWebService" address="/CalculatorWebService"/>
 	
 	<jaxws:endpoint id="loremWS" implementor="#loremBean" address="/LoremWebService">
 	    <jaxws:properties>
@@ -59,7 +59,7 @@
 	
 	<jaxws:endpoint id="providerWS" implementor="#providerBean" address="/ProviderWebService"
 		wsdlLocation="classpath:wsdl/ws-training-provider.wsdl"
-		xmlns:a="urn:com:asseco:aha:training:ws:provider:srv:v1" serviceName="a:ProviderService" endpointName="a:ProviderPort">
+		xmlns:a="urn:com:github:aha:training:ws:provider:srv:v1" serviceName="a:ProviderService" endpointName="a:ProviderPort">
 		<jaxws:properties>
 			<entry key="source-preferred-format" value="dom" />
 			<entry key="schema-validation-enabled" value="false" />

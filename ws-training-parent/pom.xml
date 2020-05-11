@@ -3,7 +3,7 @@
 
 	<groupId>com.asseco.aha.training.ws</groupId>
 	<artifactId>ws-parent</artifactId>
-	<version>0.0.3-SNAPSHOT</version>
+	<version>0.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>WS-Training :: ${project.artifactId}</name>
@@ -26,6 +26,8 @@
 		<jakarta-ee.version>1.0.1.Final</jakarta-ee.version>
 		<jaxb-runtime.version>2.3.3</jaxb-runtime.version>
 		<jaxb-core.version>2.3.0.1</jaxb-core.version>
+		
+		<wildlfy-maven-plugin.version>2.0.2.Final</wildlfy-maven-plugin.version>
 	</properties>
 
 	<dependencyManagement>
@@ -78,6 +80,23 @@
 			
 		</dependencies>
 	</dependencyManagement>
+	
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.wildfly.plugins</groupId>
+					<artifactId>wildfly-maven-plugin</artifactId>
+					<version>${wildlfy-maven-plugin.version}</version>
+					<configuration>
+						<id>wildfly-local</id>
+						<hostname>127.0.0.1</hostname>
+						<port>9990</port>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 	
 	<dependencies>
 		<dependency>
