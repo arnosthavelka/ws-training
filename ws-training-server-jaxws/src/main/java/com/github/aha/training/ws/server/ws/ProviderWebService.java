@@ -16,8 +16,8 @@ import javax.xml.ws.WebServiceProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.w3c.dom.Document;
 
+import com.github.aha.training.ws.common.XmlProcessor;
 import com.github.aha.training.ws.server.service.ProviderService;
-import com.github.aha.training.ws.server.ws.util.XmlProcessor;
 
 import lombok.extern.slf4j.Slf4j;
 

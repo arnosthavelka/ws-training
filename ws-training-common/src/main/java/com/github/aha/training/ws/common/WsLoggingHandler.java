@@ -1,4 +1,4 @@
-package com.github.aha.training.ws.server.ws.util;
+package com.github.aha.training.ws.common;
 
 import static java.util.Collections.emptySet;
 import static javax.xml.ws.handler.MessageContext.MESSAGE_OUTBOUND_PROPERTY;

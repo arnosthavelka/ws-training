@@ -4,7 +4,7 @@
 	<handler-chain>
 		<handler>
 			<handler-name>WS logging</handler-name>
-			<handler-class>com.github.aha.training.ws.server.ws.util.WsLoggingHandler</handler-class>
+			<handler-class>com.github.aha.training.ws.common.WsLoggingHandler</handler-class>
 		</handler>
 	</handler-chain>
 </handler-chains>

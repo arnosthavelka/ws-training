@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-import com.github.aha.training.ws.server.ws.util.XmlProcessor;
+import com.github.aha.training.ws.common.XmlProcessor;
 
 import lombok.extern.slf4j.Slf4j;
 

@@ -17,5 +17,6 @@
 	<aop:aspectj-autoproxy/>
 
 	<bean id="commonOF" class="com.github.aha.training.ws.types.v1.ObjectFactory" />
+	<bean id="xmlProcessor" class="com.github.aha.training.ws.common.XmlProcessorImpl" />
     
 </beans>

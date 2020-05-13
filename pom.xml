@@ -12,6 +12,7 @@
 	<modules>
 		<module>ws-training-parent</module>
 		<module>ws-training-api</module>
+		<module>ws-training-common</module>
 		<module>ws-training-server-cxf</module>
 		<module>ws-training-server-jaxws</module>
 		<module>ws-training-client-jaxws</module>
