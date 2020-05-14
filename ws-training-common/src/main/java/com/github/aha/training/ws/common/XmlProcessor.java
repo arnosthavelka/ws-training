@@ -28,6 +28,14 @@ public interface XmlProcessor {
 	Document convert2dom(Source source);
 
 	/**
+	 * Transform text (<code>String</code>) source to DOM.
+	 * 
+	 * @param source instance of <code>String</code>
+	 * @return XML as instance of <code>Document</code>
+	 */
+	Document convert2dom(String source);
+
+	/**
 	 * Apply Xpath expression on DOM element to retrieve particular elements.
 	 * 
 	 * @param xpath

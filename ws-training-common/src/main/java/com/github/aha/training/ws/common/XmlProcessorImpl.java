@@ -1,10 +1,13 @@
 package com.github.aha.training.ws.common;
 
+import java.io.StringReader;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
@@ -21,6 +24,7 @@ import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -29,13 +33,14 @@ import lombok.extern.slf4j.Slf4j;
 public class XmlProcessorImpl implements XmlProcessor {
 
 	private TransformerFactory tf = TransformerFactory.newInstance();
-
 	private XPathFactory xf;
+	private DocumentBuilderFactory tbf;
 
 	@PostConstruct
 	private void init() {
 		tf = TransformerFactory.newInstance();
 		xf = XPathFactory.newInstance();
+		tbf = DocumentBuilderFactory.newInstance();
 	}
 
 	private Transformer createTransformer() throws TransformerConfigurationException {
@@ -71,6 +76,17 @@ public class XmlProcessorImpl implements XmlProcessor {
 			return (Document) dom.getNode();
 		} catch (Exception ex) {
 			log.error("Error in converting XML (from SOAP message) to to DOM!", ex);
+			return null;
+		}
+	}
+
+	@Override
+	public Document convert2dom(String source) {
+		try {
+			DocumentBuilder builder = tbf.newDocumentBuilder();
+			return builder.parse(new InputSource(new StringReader(source)));
+		} catch (Exception e) {
+			log.error("Error in converting XML (from SOAP message) to to DOM!", e);
 			return null;
 		}
 	}

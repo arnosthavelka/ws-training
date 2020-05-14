@@ -19,7 +19,7 @@ public class CalculatorGeneratedClient {
 
     @Test
     public void testCalc() throws MalformedURLException {
-        URL url = new URL("http://localhost:8080/ws-server-as/CalcService?WSDL");
+		URL url = new URL("http://localhost:8080/ws-server-as/CalcService?WSDL");
 		QName qname = new QName("http://ws.server.ws.training.aha.github.com/", "CalcService");
 
         CalcService service = new CalcService(url, qname);

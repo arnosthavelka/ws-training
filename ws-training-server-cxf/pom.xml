@@ -24,6 +24,11 @@
 			<artifactId>ws-api</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.asseco.aha.training.ws</groupId>
+			<artifactId>ws-common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 
 		<!-- Spring -->
 		<dependency>
@@ -57,12 +62,6 @@
 			<version>${cxf.version}</version>
 		</dependency>
 		
-		<!-- Logging -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-logging</artifactId>
-		</dependency>
-
 		<!-- JavaEE -->
 		<dependency>
 			<groupId>org.jboss.spec</groupId>
