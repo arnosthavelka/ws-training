@@ -35,9 +35,8 @@
 		    <artifactId>jaxb-core</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.jboss.spec</groupId>
-			<artifactId>jboss-jakartaee-8.0</artifactId>
-			<type>pom</type>
+		    <groupId>com.sun.xml.ws</groupId>
+		    <artifactId>jaxws-rt</artifactId>
 		</dependency>
 	</dependencies>
 
