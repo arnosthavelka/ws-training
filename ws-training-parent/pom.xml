@@ -25,6 +25,9 @@
 		
 		<jaxb-runtime.version>2.3.3</jaxb-runtime.version>
 		<jaxb-core.version>2.3.0.1</jaxb-core.version>
+		<servlet-api.version>2.5</servlet-api.version>
+		<jaxws-rt.version>2.3.3</jaxws-rt.version>
+		<javax.mail.version>1.6.2</javax.mail.version>
 		
 		<wildlfy-maven-plugin.version>2.0.2.Final</wildlfy-maven-plugin.version>
 	</properties>
@@ -63,15 +66,21 @@
 			</dependency>
 			<!-- JakartaEE API -->
 			<dependency>
+			    <groupId>javax.servlet</groupId>
+			    <artifactId>servlet-api</artifactId>
+			    <version>${servlet-api.version}</version>
+			    <scope>provided</scope>
+			</dependency>
+			<dependency>
 			    <groupId>com.sun.xml.ws</groupId>
 			    <artifactId>jaxws-rt</artifactId>
-			    <version>2.3.3</version>
+			    <version>${jaxws-rt.version}</version>
 			    <scope>provided</scope>
 			</dependency>
 			<dependency>
 			    <groupId>com.sun.mail</groupId>
 			    <artifactId>javax.mail</artifactId>
-			    <version>1.6.2</version>
+			    <version>${javax.mail.version}</version>
 			    <scope>provided</scope>
 			</dependency>
 
@@ -88,6 +97,15 @@
 	<build>
 		<pluginManagement>
 			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+		            <configuration>
+		                <source>${java.release}</source>
+		                <target>${java.release}</target>
+		                <forceJavacCompilerUse>true</forceJavacCompilerUse>
+		            </configuration>
+				</plugin>
 				<plugin>
 					<groupId>org.wildfly.plugins</groupId>
 					<artifactId>wildfly-maven-plugin</artifactId>
