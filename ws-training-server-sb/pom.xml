@@ -32,12 +32,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<!-- JavaEE -->
-		<dependency>
-		    <groupId>org.jboss.spec</groupId>
-		    <artifactId>jboss-jakartaee-8.0</artifactId>
-		    <type>pom</type>
-		</dependency>
 	</dependencies>
 
 	<build>

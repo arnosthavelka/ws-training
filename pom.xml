@@ -16,7 +16,7 @@
 		<module>ws-training-server-cxf</module>
 		<module>ws-training-server-jaxws</module>
 		<module>ws-training-client-jaxws</module>
-		<module>ws-training-server-sb</module>
+<!-- 		<module>ws-training-server-sb</module> -->
 		<module>ws-training-server-tomcat</module>
 	</modules>
 	

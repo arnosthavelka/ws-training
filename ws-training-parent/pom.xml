@@ -19,11 +19,10 @@
 		<maven.compiler.target>${java.release}</maven.compiler.target>
 		<jacoco.version>0.8.5</jacoco.version>
 		
-		<spring-boot.version>2.2.6.RELEASE</spring-boot.version>
+		<spring-boot.version>2.2.7.RELEASE</spring-boot.version>
 		<junit.jupiter.version>5.6.2</junit.jupiter.version>
 		<cxf.version>3.3.6</cxf.version>
 		
-		<jakarta-ee.version>1.0.1.Final</jakarta-ee.version>
 		<jaxb-runtime.version>2.3.3</jaxb-runtime.version>
 		<jaxb-core.version>2.3.0.1</jaxb-core.version>
 		
@@ -62,18 +61,17 @@
 			    <version>${jaxb-core.version}</version>
 			    <scope>provided</scope>
 			</dependency>
-			<!-- JavaEE -->
-			<dependency>
-			    <groupId>org.jboss.spec</groupId>
-			    <artifactId>jboss-jakartaee-8.0</artifactId>
-			    <version>${jakarta-ee.version}</version>
-			    <type>pom</type>
-			    <scope>provided</scope>
-			</dependency>
+			<!-- JakartaEE API -->
 			<dependency>
 			    <groupId>com.sun.xml.ws</groupId>
 			    <artifactId>jaxws-rt</artifactId>
 			    <version>2.3.3</version>
+			    <scope>provided</scope>
+			</dependency>
+			<dependency>
+			    <groupId>com.sun.mail</groupId>
+			    <artifactId>javax.mail</artifactId>
+			    <version>1.6.2</version>
 			    <scope>provided</scope>
 			</dependency>
 

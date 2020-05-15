@@ -49,12 +49,14 @@
             <artifactId>spring-oxm</artifactId>
         </dependency>
 		
-		<!-- JavaEE -->
+		<!-- JakartaEE API -->
 		<dependency>
-			<groupId>org.jboss.spec</groupId>
-		    <artifactId>jboss-jakartaee-8.0</artifactId>
-			<type>pom</type>
-			<scope>provided</scope>
+		    <groupId>com.sun.xml.ws</groupId>
+		    <artifactId>jaxws-rt</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>com.sun.mail</groupId>
+		    <artifactId>javax.mail</artifactId>
 		</dependency>
 
 		<!-- Others -->
