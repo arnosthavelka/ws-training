@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
-import com.asseco.aha.training.ws.server.service.HelloService;
+import com.github.aha.training.ws.common.service.HelloService;
 
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;

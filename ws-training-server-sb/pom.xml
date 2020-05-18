@@ -40,6 +40,11 @@
 		    <groupId>com.sun.xml.ws</groupId>
 		    <artifactId>jaxws-rt</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.asseco.aha.training.ws</groupId>
+			<artifactId>ws-common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>

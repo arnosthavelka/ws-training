@@ -5,7 +5,7 @@ import javax.xml.ws.soap.Addressing;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.github.aha.training.ws.server.service.HelloService;
+import com.github.aha.training.ws.common.service.HelloService;
 
 import lombok.extern.slf4j.Slf4j;
 
