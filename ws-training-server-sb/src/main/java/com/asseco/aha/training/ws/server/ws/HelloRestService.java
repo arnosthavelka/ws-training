@@ -2,6 +2,7 @@ package com.asseco.aha.training.ws.server.ws;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
@@ -14,8 +15,8 @@ public class HelloRestService {
     @Autowired
     private HelloService service;
 
-    @RequestMapping("/hello")
-    public String sayHello(String name) {
+	@RequestMapping("/hello")
+	public String sayHello(@RequestParam String name) {
         SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
 
         return service.sayHello(name);

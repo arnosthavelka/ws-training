@@ -1,13 +1,12 @@
-package com.github.aha.training.ws.server.service;
+package com.github.aha.training.ws.common;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 @Service
-public class CalculatorServiceImpl implements CalculatorService {
+public class CalculatorService {
 
-	@Override
 	public Integer add(List<Integer> values) {
 		int value = 0;
 		for (Integer number : values) {
@@ -16,7 +15,6 @@ public class CalculatorServiceImpl implements CalculatorService {
 		return value;
 	}
 
-	@Override
 	public Long multiply(List<Integer> values) {
 		long value = 0;
 		for (Integer number : values) {

@@ -1,2 +1,3 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.github.aha.training.ws.common.XmlProcessorImpl
+com.github.aha.training.ws.common.XmlProcessorImpl,\
+com.github.aha.training.ws.common.CalculatorService
