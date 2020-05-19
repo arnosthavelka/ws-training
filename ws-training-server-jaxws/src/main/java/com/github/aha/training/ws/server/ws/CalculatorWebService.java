@@ -5,7 +5,7 @@ import javax.jws.WebService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.github.aha.training.ws.calc.srv.v1.CalcPortType;
-import com.github.aha.training.ws.common.CalculatorService;
+import com.github.aha.training.ws.common.service.CalculatorService;
 import com.github.aha.training.ws.types.v1.AddRequest;
 import com.github.aha.training.ws.types.v1.AddResponse;
 import com.github.aha.training.ws.types.v1.ObjectFactory;

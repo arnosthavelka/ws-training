@@ -1,4 +1,4 @@
-package com.github.aha.training.ws.common;
+package com.github.aha.training.ws.common.service;
 
 import java.util.List;
 
