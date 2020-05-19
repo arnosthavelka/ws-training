@@ -18,7 +18,7 @@ import com.github.aha.training.ws.types.v1.ObjectFactory;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration("classpath:/spring/application-context-test.xml")
-public class CalculatorSpringClient {
+class CalculatorSpringClient {
 
     @Autowired
     private CalcPortType calc;
@@ -27,7 +27,7 @@ public class CalculatorSpringClient {
     private ObjectFactory of;
 
     @Test
-    public void testCalc() throws MalformedURLException {
+	void testCalc() throws MalformedURLException {
         AddRequest ar = of.createAddRequest(); // new AddRequest();
         List<Integer> inputs = ar.getNumber();
         inputs.add(5);

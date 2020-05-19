@@ -15,10 +15,10 @@ import com.github.aha.training.ws.calc.srv.v1.CalcService;
 import com.github.aha.training.ws.types.v1.AddRequest;
 import com.github.aha.training.ws.types.v1.AddResponse;
 
-public class CalculatorGeneratedClient {
+class CalculatorGeneratedClient {
 
     @Test
-    public void testCalc() throws MalformedURLException {
+	void testCalc() throws MalformedURLException {
 		URL url = new URL("http://localhost:8080/ws-server-as/CalcService?WSDL");
 		QName qname = new QName("http://ws.server.ws.training.aha.github.com/", "CalcService");
 

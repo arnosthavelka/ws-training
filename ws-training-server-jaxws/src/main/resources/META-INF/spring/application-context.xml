@@ -18,7 +18,7 @@
 
 	<bean id="commonOF" class="com.github.aha.training.ws.types.v1.ObjectFactory" />
 	<bean id="xmlProcessor" class="com.github.aha.training.ws.common.XmlProcessorImpl" />
-	<bean id="calculatorService" class="com.github.aha.training.ws.common.CalculatorService" />
+	<bean id="calculatorService" class="com.github.aha.training.ws.common.service.CalculatorService" />
 	<bean id="helloService" class="com.github.aha.training.ws.common.service.HelloService" />
     
 </beans>
