@@ -23,7 +23,7 @@ public class CalculatorWebService implements CalcPortType {
     public AddResponse add(AddRequest request) {
 		log.info("Starting calculator#add WS method ...");
 
-        int value = service.add(request.getNumber());
+        int value = service.sum(request.getNumber());
 
         AddResponse response = of.createAddResponse();
         response.setResult(value);

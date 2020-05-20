@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class CalculatorService {
 
-	public Integer add(List<Integer> values) {
+	public Integer sum(List<Integer> values) {
 		int value = 0;
 		for (Integer number : values) {
 			value += number;
@@ -16,7 +16,10 @@ public class CalculatorService {
 	}
 
 	public Long multiply(List<Integer> values) {
-		long value = 0;
+		if (values.isEmpty()) {
+			return 0L;
+		}
+		long value = 1;
 		for (Integer number : values) {
 			value *= number;
 		}
