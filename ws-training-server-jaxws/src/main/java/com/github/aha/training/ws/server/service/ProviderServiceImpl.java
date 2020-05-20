@@ -5,20 +5,22 @@ import java.util.List;
 
 import javax.xml.soap.SOAPHeader;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 import com.github.aha.training.ws.common.XmlProcessor;
 
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class ProviderServiceImpl implements ProviderService {
 
-	@Autowired
+	@NonNull
 	private XmlProcessor xp;
 
 	@Override

@@ -26,7 +26,7 @@ public class CalculatorWebService extends AbstractSoapWebService implements Calc
     public AddResponse add(AddRequest request) {
 		log.info("Starting calculator#add WS method ...");
 
-        int value = service.add(request.getNumber());
+        int value = service.sum(request.getNumber());
 
         AddResponse response = of.createAddResponse();
         response.setResult(value);

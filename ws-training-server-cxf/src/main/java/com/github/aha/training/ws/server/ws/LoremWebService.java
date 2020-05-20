@@ -4,18 +4,20 @@ import javax.activation.DataHandler;
 import javax.jws.WebMethod;
 import javax.mail.util.ByteArrayDataSource;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.github.aha.training.ws.server.service.LoremService;
+import com.github.aha.training.ws.common.service.LoremService;
 
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Component("loremBean")
 @Slf4j
+@RequiredArgsConstructor
 public class LoremWebService {
 
-    @Autowired
+	@NonNull
     private LoremService service;
 
     @WebMethod

@@ -7,7 +7,7 @@ import javax.xml.ws.soap.MTOM;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.github.aha.training.ws.server.service.LoremService;
+import com.github.aha.training.ws.common.service.LoremService;
 
 import lombok.extern.slf4j.Slf4j;
 
