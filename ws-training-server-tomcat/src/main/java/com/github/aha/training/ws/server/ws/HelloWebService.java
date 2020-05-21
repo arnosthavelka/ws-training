@@ -6,7 +6,7 @@ import javax.jws.WebService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
-import com.github.aha.training.ws.server.service.HelloService;
+import com.github.aha.training.ws.common.service.HelloService;
 
 import lombok.extern.slf4j.Slf4j;
 

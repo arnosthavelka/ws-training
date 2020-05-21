@@ -23,6 +23,11 @@
 			<artifactId>ws-api</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.asseco.aha.training.ws</groupId>
+			<artifactId>ws-common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 	
 		<!-- Spring -->
 		<dependency>
