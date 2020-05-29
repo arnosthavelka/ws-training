@@ -5,7 +5,7 @@ The collection of implementation examples for SOAP webservice usage.
 
 ## Pre-requisities
 * JDK 11
-* Maven 3
+* Maven 3.5
 * Lombok (installed into IDE)
 * WildFly 19
 * Tomcat 9
@@ -25,7 +25,7 @@ The collection of implementation examples for SOAP webservice usage.
 | Maven            | 3.x          | all                                                | Build                          |
 | Java             | 11           | all                                                | Java platform                  |
 | JAX-B            | 2.3.3        | all                                                | Class binding                  |
-| SpringBoot       | 2.2.7        | all                                                | Dependency Management          |
+| SpringBoot       | 2.3.0        | all                                                | Dependency Management          |
 | Lombok           | N/A          | all                                                | Simplification of Java classes |
 | JUnit            | 5.6.2        | ws-training-client-jaxws                           | Unit testing with JUnit5       |
 | CXF              | 3.3.6        | ws-training-cxf                                    | WA framework                   |

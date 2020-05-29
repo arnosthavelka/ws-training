@@ -20,7 +20,7 @@
 		<jacoco.version>0.8.5</jacoco.version>
 		<surefire-plugin>2.22.2</surefire-plugin>
 		
-		<spring-boot.version>2.2.7.RELEASE</spring-boot.version>
+		<spring-boot.version>2.3.0.RELEASE</spring-boot.version>
 		<junit.jupiter.version>5.6.2</junit.jupiter.version>
 		<cxf.version>3.3.6</cxf.version>
 		
