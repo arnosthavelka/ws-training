@@ -18,6 +18,7 @@
 		<maven.compiler.source>${java.release}</maven.compiler.source>
 		<maven.compiler.target>${java.release}</maven.compiler.target>
 		<jacoco.version>0.8.5</jacoco.version>
+		<surefire-plugin>2.22.2</surefire-plugin>
 		
 		<spring-boot.version>2.2.7.RELEASE</spring-boot.version>
 		<junit.jupiter.version>5.6.2</junit.jupiter.version>
@@ -97,6 +98,11 @@
 	<build>
 		<pluginManagement>
 			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>${surefire-plugin}</version>
+				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
