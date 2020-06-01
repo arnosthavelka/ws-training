@@ -4,7 +4,7 @@
 The collection of implementation examples for SOAP webservice usage.
 
 ## Pre-requisities
-* JDK 11
+* JDK 14
 * Maven 3.5
 * Lombok (installed into IDE)
 * WildFly 19
