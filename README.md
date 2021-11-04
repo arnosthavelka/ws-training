@@ -4,8 +4,8 @@
 The collection of implementation examples for SOAP webservice usage.
 
 ## Pre-requisities
-* JDK 15
-* Maven 3.x
+* JDK 17
+* Maven 3.8.x
 * Lombok (installed into IDE)
 * WildFly 19
 * Tomcat 9
@@ -20,15 +20,13 @@ The collection of implementation examples for SOAP webservice usage.
 
 ## Used Technologies
 
-| Tool             | Version      | Project                                            | Description                    |
-| ---------------- | ------------ | --------------------------------------             | ------------------------------ |
-| Maven            | 3.x          | all                                                | Build                          |
-| Java             | 15           | all                                                | Java platform                  |
-| JAX-B            | 2.3.3        | all                                                | Class binding                  |
-| SpringBoot       | 2.4.0        | all                                                | Dependency Management          |
-| Lombok           | N/A          | all                                                | Simplification of Java classes |
-| JUnit            | 5.7.0        | ws-training-client-jaxws                           | Unit testing with JUnit5       |
-| CXF              | 3.4.1        | ws-training-cxf                                    | WA framework                   |
+| Tool             | Project                                            | Description                    |
+| ---------------- | -------------------------------------------------- | ------------------------------ |
+| JAX-B            | all                                                | Class binding                  |
+| SpringBoot       | all                                                | Dependency Management          |
+| Lombok           | all                                                | Simplification of Java classes |
+| JUnit            | ws-training-client-jaxws                           | Unit testing with JUnit5       |
+| CXF              | ws-training-cxf                                    | WA framework                   |
 
 ## Services
 | Service          | Technology                                          |
@@ -44,8 +42,8 @@ The collection of implementation examples for SOAP webservice usage.
    1. Username & Password
 1. Change *Server location* in Eclipse to value *Use Tomcat Installation*
 
-[travis-url-main]: https://travis-ci.org/arnosthavelka/ws-training
-[travis-image]: https://travis-ci.org/arnosthavelka/ws-training.svg?branch=master
+[travis-url-main]: https://app.travis-ci.com/github/arnosthavelka/ws-training
+[travis-image]: https://travis-ci.com/arnosthavelka/ws-training.svg?branch=master
 
 [sonar-url]: https://sonarcloud.io/dashboard?id=arnosthavelka_ws-training
 [sonar-quality-gate]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_ws-training&metric=alert_status

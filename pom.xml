@@ -3,7 +3,7 @@
 
 	<groupId>com.asseco.aha.training.ws</groupId>
 	<artifactId>ws-training</artifactId>
-	<version>0.2.0-SNAPSHOT</version>
+	<version>0.3.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>WS-Training :: ${project.artifactId}</name>
