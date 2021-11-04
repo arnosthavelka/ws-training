@@ -44,8 +44,8 @@ The collection of implementation examples for SOAP webservice usage.
    1. Username & Password
 1. Change *Server location* in Eclipse to value *Use Tomcat Installation*
 
-[travis-url-main]: https://travis-ci.org/arnosthavelka/ws-training
-[travis-image]: https://travis-ci.org/arnosthavelka/ws-training.svg?branch=master
+[travis-url-main]: https://app.travis-ci.com/github/arnosthavelka/ws-training
+[travis-image]: https://travis-ci.com/arnosthavelka/ws-training.svg?branch=master
 
 [sonar-url]: https://sonarcloud.io/dashboard?id=arnosthavelka_ws-training
 [sonar-quality-gate]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_ws-training&metric=alert_status
