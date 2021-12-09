@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -11,7 +12,7 @@
 	</parent>
 
 	<artifactId>ws-client-jaxws</artifactId>
-    <packaging>jar</packaging>
+	<packaging>jar</packaging>
 
 	<name>WS-Training :: ${project.artifactId}</name>
 	<description>Implementation of WS client side</description>
@@ -23,7 +24,7 @@
 			<artifactId>ws-api</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		
+
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -39,7 +40,7 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aspects</artifactId>
 		</dependency>
-        
+
 		<!-- Test -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -49,12 +50,11 @@
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
 		</dependency>
-			
+
 		<!-- JavaEE -->
 		<dependency>
 			<groupId>com.sun.xml.ws</groupId>
-			<artifactId>rt</artifactId>
-			<version>${jaxb-runtime.version}</version>
+			<artifactId>jaxws-rt</artifactId>
 		</dependency>
 		<!-- JAX-B for JDK9+ -->
 		<dependency>
