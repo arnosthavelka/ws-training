@@ -9,6 +9,9 @@ import com.github.aha.training.ws.common.service.HelloService;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * WSDL: http://127.0.0.1:8080/ws-server-as/HelloWebService?WSDL
+ */
 @WebService
 @Addressing
 @Slf4j

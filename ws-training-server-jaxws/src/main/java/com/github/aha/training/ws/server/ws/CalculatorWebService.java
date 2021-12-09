@@ -12,6 +12,9 @@ import com.github.aha.training.ws.types.v1.ObjectFactory;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * WSDL: http://127.0.0.1:8080/ws-server-as/CalcService?WSDL
+ */
 @WebService(serviceName = "CalcService", portName = "CalcPort", endpointInterface = "com.github.aha.training.ws.calc.srv.v1.CalcPortType")
 @Slf4j
 public class CalculatorWebService extends AbstractSoapWebService implements CalcPortType {

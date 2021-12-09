@@ -11,6 +11,9 @@ import com.github.aha.training.ws.common.service.LoremService;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * WSDL: http://127.0.0.1:8080/ws-server-as/LoremWebService?WSDL
+ */
 @WebService
 @MTOM(threshold = 1024)
 @Slf4j
