@@ -11,6 +11,9 @@ import com.github.aha.training.ws.common.service.HelloService;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * WSDL: http://localhost:8080/ws-server-sb/HelloWebService?wsdl
+ */
 @WebService
 @Slf4j
 public class HelloWebService extends SpringBeanAutowiringSupport {
