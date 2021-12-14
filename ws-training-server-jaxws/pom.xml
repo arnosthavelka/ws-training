@@ -50,7 +50,7 @@
 			<artifactId>spring-oxm</artifactId>
 		</dependency>
 
-		<!-- JakartaEE API -->
+		<!-- JakartaEE -->
 		<dependency>
 			<groupId>com.sun.xml.ws</groupId>
 			<artifactId>jaxws-rt</artifactId>

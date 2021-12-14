@@ -55,11 +55,11 @@
 			<artifactId>spring-boot-starter-logging</artifactId>
 		</dependency>	
 		
-		<!-- JAX-B -->
+		<!-- JavaEE -->
 		<dependency>
 			<groupId>com.sun.xml.ws</groupId>
 			<artifactId>jaxws-rt</artifactId>
-			<version>${jaxb-runtime.version}</version>
+			<scope>compile</scope>
 		</dependency>
 		
 	</dependencies>

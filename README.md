@@ -8,7 +8,7 @@ The collection of implementation examples for SOAP webservice usage.
 * Maven 3.8.x
 * Lombok (installed into IDE)
 * WildFly (tested on version 25)
-* Tomcat (tested on version 10)
+* Tomcat (tested on version 9 - JavaEE)
 
 ## Features
 1. **JAX-B** - class generation from WSDL 
