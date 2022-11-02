@@ -19,11 +19,11 @@
 		<maven.compiler.source>${java.release}</maven.compiler.source>
 		<maven.compiler.target>${java.release}</maven.compiler.target>
 		<maven-war-plugin.version>3.3.2</maven-war-plugin.version>
-		<jacoco.version>0.8.7</jacoco.version>
-		<surefire-plugin>3.0.0-M6</surefire-plugin>
+		<jacoco.version>0.8.8</jacoco.version>
+		<surefire-plugin>3.0.0-M7</surefire-plugin>
 
-		<spring-boot.version>2.6.6</spring-boot.version>
-		<junit-jupiter.version>5.8.2</junit-jupiter.version>
+		<spring-boot.version>2.7.5</spring-boot.version>
+		<junit-jupiter.version>5.9.1</junit-jupiter.version>
 		<cxf.version>3.5.1</cxf.version>
 
 		<jaxb-runtime.version>3.0.2</jaxb-runtime.version>
@@ -32,7 +32,7 @@
 		<jaxws-rt.version>2.3.3</jaxws-rt.version>
 		<javax.mail.version>1.6.2</javax.mail.version>
 
-		<wildlfy-maven-plugin.version>3.0.0.Final</wildlfy-maven-plugin.version>
+		<wildlfy-maven-plugin.version>3.0.2.Final</wildlfy-maven-plugin.version>
 	</properties>
 
 	<dependencyManagement>
